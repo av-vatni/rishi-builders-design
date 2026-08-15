@@ -93,7 +93,9 @@ export function SiteHeader() {
                     </div>
                   </div>
                 </div>
+                </div>
               </div>
+
             </div>
             <div className="relative group py-2">
               <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
