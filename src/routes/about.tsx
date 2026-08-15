@@ -75,78 +75,25 @@ function AboutPage() {
 </div>
 {/* Timeline Filter */}
 <div className="flex flex-wrap justify-center gap-4 mb-16">
-<button className="milestone-btn px-8 py-3 border border-[#AB8C47] bg-[#AB8C47] text-white font-label-caps text-sm tracking-widest transition-colors duration-300" data-period="1998-2008">1998 - 2008</button>
-<button className="milestone-btn px-8 py-3 border border-[#AB8C47] bg-white text-primary hover:bg-surface-container-low font-label-caps text-sm tracking-widest transition-colors duration-300" data-period="2009-2019">2009 - 2019</button>
-<button className="milestone-btn px-8 py-3 border border-[#AB8C47] bg-white text-primary hover:bg-surface-container-low font-label-caps text-sm tracking-widest transition-colors duration-300" data-period="2020-present">2020 - Present</button>
+{MILESTONE_PERIODS.map((p) => (
+  <button
+    key={p.id}
+    onClick={() => setPeriod(p.id)}
+    className={`milestone-btn px-8 py-3 border border-[#AB8C47] font-label-caps text-sm tracking-widest transition-colors duration-300 ${period === p.id ? "bg-[#AB8C47] text-white" : "bg-white text-primary hover:bg-surface-container-low"}`}
+  >{p.label}</button>
+))}
 </div>
 {/* Milestones Grid */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 transition-opacity duration-500 opacity-100" id="milestones-grid" style={{opacity: "1"}}>
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun City I</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun City II</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Paradise I</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Paradise II</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Empire</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Galaxy</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Vadgaon BK</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Orbit</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anand Nagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Residency</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Dhayari</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Orion</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Vadgaon BK</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Satellite</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Anandnagar, Sinhgad Road</p>
-                    </div>
-                
-                    <div className="flex flex-col">
-                        <h4 className="font-headline-lg text-2xl text-primary mb-3">Sun Horizon</h4>
-                        <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
-                        <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">Balewadi, Near Sadanand Hotel</p>
-                    </div>
-                </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-12 transition-opacity duration-500 opacity-100" id="milestones-grid">
+{MILESTONES[period].map((m) => (
+  <div className="flex flex-col" key={m.name}>
+    <h4 className="font-headline-lg text-2xl text-primary mb-3">{m.name}</h4>
+    <div className="h-[1px] w-full bg-[#AB8C47] mb-4"></div>
+    <p className="font-body-md text-on-surface-variant text-sm uppercase tracking-wider">{m.location}</p>
+  </div>
+))}
+</div>
+
 </section>
 
 </main>
