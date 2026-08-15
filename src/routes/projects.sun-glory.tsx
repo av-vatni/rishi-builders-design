@@ -33,15 +33,15 @@ const AMENITIES = [
 
 const GALLERY = [
   {
-    "alt": "Gallery Image 1",
+    "alt": "Living Room",
     "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD_Z08Zzb7rYH7w18lCcLUdTmJLkchoiXZBPhprKhzO6jgIIbX_5Wo751dEUjeKvL7-yFlGkOK3cBACP48wWAbI7lj7yOoNuFRUcyf8ypdIw3wsGFC5f9YIXNJCVW661G2r34-6zrVR57I_vaaFRYBCnVNoFVf42utJSXuUUxYN617fKbn_OTZDAO1__CbU6WIoPNE75OX-WMi8OYkYVlJHDNVuFVQjINwLvQDHkptlsPB2YvT-RFAkTA"
   },
   {
-    "alt": "Active Gallery Image",
+    "alt": "Exterior View",
     "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDDJk6ePrMdWyhwHeuvBTGO_geuNgNCrVLEtNA-A6n0n0yIk5Iykea_T_PF2PvMaVasbQv1ZHRKXtUVQg0I-1EnH1kzQ8GPBtysoLZJY_-7DeK3bAcjbQDckKvqmVZpx76BpcqUN5v44rR-i46UDh0GKD9iX1emaM9Vr3LwtfmJbX7fKhzaxKYkT8B0_XyQW9XNbZweitAUrajsPEsRRMFZCPplz_eWsXnmLh78Mb0XsnhOpOiVqnobD5aFPBVzqvt3G80"
   },
   {
-    "alt": "Gallery Image 3",
+    "alt": "Atrium Lobby",
     "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD1qnKxmswsX1lJOHcJdqU5s9OOO1UeFNUvPcOIwZLPsHRYl8EVpxeOoOAsKMtY2VVp5E2n2J9u4dysI0F34ey0WCS8U6yh-sraockbuobEVbWQh0a7x495QE2vKeH7W0sGWeg6HKiVXNSf7BQsW9jghX-VVV4mfxmdHENBQoo73CDRZW2H7Aag2ZlpGt1hVPfQMcf0vEq1KzSrHYZicO7a4nUTiLaAHkjHXk_pSKWv7dnCFus4vZaelA"
   }
 ];
