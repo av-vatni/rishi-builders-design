@@ -1,4 +1,7 @@
+import { Link } from "@tanstack/react-router";
+
 export function SiteFooter() {
+
   return (
 <footer className="bg-tertiary dark:bg-tertiary-container full-width border-t border-on-tertiary-fixed-variant">
 <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-container-padding py-section-gap w-full max-w-7xl mx-auto">
