@@ -49,6 +49,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const [period, setPeriod] = useState<PeriodId>("1998-2008");
   return (
     <>
 {/* Header (Shared Component) */}
