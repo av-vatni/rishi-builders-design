@@ -22,7 +22,7 @@ function CommercialPage() {
 {/* Main Content Canvas */}
 <main className="flex-grow pt-[100px] md:pt-[120px]">
 {/* Page Header & Filters */}
-<section className="px-gutter md:px-container-padding py-margin-lg text-center max-w-5xl mx-auto">
+<section className="px-gutter md:px-6 md:px-container-padding py-margin-lg text-center max-w-5xl mx-auto">
 <h1 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-primary mb-6">Commercial Projects</h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
                 Discover our portfolio of meticulously planned non-agricultural plots, designed for those who appreciate space, security, and long-term value.
@@ -41,7 +41,7 @@ function CommercialPage() {
 </div>
 </section>
 {/* Project Grid */}
-<section className="px-gutter md:px-container-padding pb-section-gap">
+<section className="px-gutter md:px-6 md:px-container-padding pb-section-gap">
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-margin-md">{/* Card 1: Aura Estates */}
 <div className="relative group cursor-pointer pt-4 pb-20">
 <div className="w-full h-[400px] rounded-2xl overflow-hidden relative z-0">

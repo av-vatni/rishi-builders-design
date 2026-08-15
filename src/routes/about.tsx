@@ -26,7 +26,7 @@ function AboutPage() {
 <h2 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em]">Come Home To Quality</h2>
 </section>
 {/* Asymmetric About Section */}
-<section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-container-padding py-margin-lg">
+<section className="relative w-full max-w-[1440px] mx-auto px-6 md:px-6 md:px-container-padding py-margin-lg">
 <div className="relative flex flex-col md:flex-row items-center">
 {/* Left: Large Image */}
 <div className="w-full md:w-[55%] overflow-hidden bg-surface-container z-0 md:h-[500px]">
@@ -64,7 +64,7 @@ function AboutPage() {
 </div>
 </section>
 {/* Project Milestones Section */}
-<section className="w-full max-w-[1440px] mx-auto px-6 md:px-container-padding py-section-gap">
+<section className="w-full max-w-[1440px] mx-auto px-6 md:px-6 md:px-container-padding py-section-gap">
 <div className="flex flex-col items-center gap-4 mb-16">
 <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-[0.2em] text-center">From Vision to Reality</h3>
 <h2 className="font-headline-xl text-headline-xl text-primary text-center">OUR PROJECT MILESTONES</h2>

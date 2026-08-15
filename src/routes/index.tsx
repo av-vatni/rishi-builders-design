@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,6 +16,13 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
+  const [slide, setSlide] = useState(2);
+
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % 4), 6000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
 {/* TopNavBar */}
@@ -25,10 +33,10 @@ function HomePage() {
 {/* Slides Container */}
 <div className="relative w-full h-full" id="carousel-slides">
 {/* Slide 1 */}
-<div className="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0" data-index="0">
+<div className={`carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${slide === 0 ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
 <img alt="" className="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUiejDFEDr1VUzesaVwXceUA2B2iU-P2C7FUpNYlRmB3Y6hA-opAqPT6GCbHuaFBluG5NqEbMpLOrHoAfSmKHP544PRcrLDFzb_M8bdpfWiSm3WySCf88I9oBFBvfPJJX9m5g6OX3X6vajiqLZjZNN9P0RWvT0h89AYL3vU3HfYMA-fJvJ81ZrRe_vM4KCMiAoMEvo3lEHq-A8_CMbc97r5cNkJ4tFisPVoC7As5eEtOuccR3qfllc0qkOr5Ela1RBHMux38vYXxOrmo4" />
 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent"></div>
-<div className="relative z-20 h-full flex items-center pl-24 pr-container-padding">
+<div className="relative z-20 h-full flex items-center pl-8 md:pl-24 pr-6 md:pr-container-padding">
 <div className="max-w-7xl mx-auto w-full">
 <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100">
 <h2 className="font-display-lg text-display-lg text-white mb-2 leading-tight drop-shadow-lg">Sun Glory<br />Lokmanya Nagar</h2>
@@ -40,10 +48,10 @@ function HomePage() {
 </div>
 </div>
 {/* Slide 2 */}
-<div className="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0" data-index="1">
+<div className={`carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${slide === 1 ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
 <img alt="" className="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKMKYv2_Bju6WEO85GdUqyFximBSw66a3ot2IDVnFDsVfmoXn-UM7mEpVh5olcMAh0Hy7N5yUQ7LSyYyCpK5Xocz3c786jBS3flQ_jpvEjEDWCdZTLtC82Y1gcENzwyldR21uMm91B00Qj98fvur8LT1o0RCOl8L2QqebOUueiA5vU89PHBHfc8X4zzMQXy1dlSyTGz4AlnA6NHloMcahwysZJJcsHCVtGH9zAMll8xpFBbgafoXRpRPtHbaios3tnPR-wJEbLQssjJeg" />
 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent"></div>
-<div className="relative z-20 h-full flex items-center pl-24 pr-container-padding">
+<div className="relative z-20 h-full flex items-center pl-8 md:pl-24 pr-6 md:pr-container-padding">
 <div className="max-w-7xl mx-auto w-full">
 <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100">
 <h2 className="font-display-lg text-display-lg text-white mb-2 leading-tight drop-shadow-lg">Sun Crest<br />Dhayari</h2>
@@ -55,10 +63,10 @@ function HomePage() {
 </div>
 </div>
 {/* Slide 3 */}
-<div className="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out z-10" data-index="2">
+<div className={`carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${slide === 2 ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
 <img alt="" className="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIrwz9DwzR7kL4pJ_NZV7fH1TQkqYyoz1g4_DHexfR8AT2Fh8X_8jUp9iF_iet4pSd7oy8nIWrUMg4cqLEXsTAv643mRRNKUh346W8168a5TIE-UvrBrkyg8bh3ioaBeqJ35l_Gg5Lr2G7omNCPgw47gYmuO_oZhCL38FCoptwqctzJZs_wRuEYG_IqkdpGvYjs-M0kmjq2izd3lLdMFirfibocY1-1WbioCiAsI3G8TrxZQHSpI-5MsczalW-rThIrH44z6LIMViZfo0" />
 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent"></div>
-<div className="relative z-20 h-full flex items-center pl-24 pr-container-padding">
+<div className="relative z-20 h-full flex items-center pl-8 md:pl-24 pr-6 md:pr-container-padding">
 <div className="max-w-7xl mx-auto w-full">
 <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100 ml-12">
 <h2 className="font-display-lg text-display-lg text-white mb-2 leading-tight drop-shadow-lg">Sun Regalia<br />Sinhagad Road</h2>
@@ -70,10 +78,10 @@ function HomePage() {
 </div>
 </div>
 {/* Slide 4 */}
-<div className="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out z-0" data-index="3">
+<div className={`carousel-slide absolute inset-0 transition-opacity duration-1000 ease-in-out ${slide === 3 ? "opacity-100 z-10" : "opacity-0 z-0"}`}>
 <img alt="" className="absolute inset-0 w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbeAM4ebSEPFrq_zxsq2wZ1IItU3J0AOpaYSAV4IJYxdzP0ACd7Rwhi_sLdAQixUIktUSLjP3Q70k_8eMYvJZUu7sX8uau7pcBfYF6R2q5fD5ETPdecg0EsgLA_p7mc_RS1nhgS63YIuxhhKpUNOGXmI9eR7G5nhzakfIml7MtokHa7WEfJeyPQJHdiKAn_2XySg-cJ9-IgzLdqSnsxgOqVXA6IAircaTMXanZvLtB1SHqyUSXhxES-mnLmA93CfambYjJuAOWU_zg-Ww" />
 <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent"></div>
-<div className="relative z-20 h-full flex items-center pl-24 pr-container-padding">
+<div className="relative z-20 h-full flex items-center pl-8 md:pl-24 pr-6 md:pr-container-padding">
 <div className="max-w-7xl mx-auto w-full">
 <div className="max-w-2xl transform transition-all duration-700 translate-y-0 opacity-100">
 <h2 className="font-display-lg text-display-lg text-white mb-2 leading-tight drop-shadow-lg">Sun Crest<br />Dhayari</h2>
@@ -86,16 +94,25 @@ function HomePage() {
 </div>
 </div>
 {/* Controls */}
-<button className="absolute left-8 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors" id="prev-slide">
+<button className="absolute left-8 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors" onClick={() => setSlide((s) => (s + 3) % 4)}>
 <span className="material-symbols-outlined text-6xl font-light">chevron_left</span>
 </button>
-<button className="absolute right-8 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors" id="next-slide">
+<button className="absolute right-8 top-1/2 -translate-y-1/2 z-30 text-white/50 hover:text-white transition-colors" onClick={() => setSlide((s) => (s + 1) % 4)}>
 <span className="material-symbols-outlined text-6xl font-light">chevron_right</span>
 </button>
-
+<div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+{[0, 1, 2, 3].map((i) => (
+  <button
+    key={i}
+    aria-label={`Go to slide ${i + 1}`}
+    onClick={() => setSlide(i)}
+    className={`h-2 rounded-full transition-all duration-300 ${slide === i ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/80"}`}
+  />
+))}
+</div>
 </header>
 {/* Overlapping Block */}
-<section className="py-section-gap px-container-padding pb-20 pb-section-gap">
+<section className="py-section-gap px-6 md:px-container-padding pb-20 pb-section-gap">
 <div className="max-w-7xl mx-auto relative">
 <div className="relative">
 {/* Large Architectural Image on the Left */}
@@ -122,7 +139,7 @@ function HomePage() {
 </div>
 </section>
 {/* Featured Projects */}
-<section className="py-section-gap px-container-padding bg-surface-container-low">
+<section className="py-section-gap px-6 md:px-container-padding bg-surface-container-low">
 <div className="max-w-7xl mx-auto text-center mb-16">
 <div className="flex items-center justify-center gap-4 mb-4">
 <div className="w-12 h-px bg-secondary"></div>
@@ -186,7 +203,7 @@ function HomePage() {
 </div>
 </section>
 {/* Insights */}
-<section className="py-section-gap px-container-padding">
+<section className="py-section-gap px-6 md:px-container-padding">
 <div className="max-w-7xl mx-auto text-center mb-16">
 <div className="flex items-center justify-center gap-4">
 <div className="w-12 h-px bg-secondary"></div>

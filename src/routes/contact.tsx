@@ -22,7 +22,7 @@ function ContactPage() {
 {/* Main Content Canvas */}
 <main className="w-full flex flex-col items-center">
 {/* Enquiry Section */}
-<section className="w-full max-w-4xl mx-auto px-container-padding py-section-gap flex flex-col items-center text-center"><div className="w-full max-w-[670px] mx-auto flex flex-col items-center">
+<section className="w-full max-w-4xl mx-auto px-6 md:px-container-padding py-section-gap flex flex-col items-center text-center"><div className="w-full max-w-[670px] mx-auto flex flex-col items-center">
   <p className="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant mb-4">Your ideal space is just a step away</p>
   <h1 className="font-headline-xl text-[48px] leading-tight text-primary mb-6 tracking-[0.02em] font-normal">LET'S GET STARTED!</h1>
   <div className="flex items-center gap-4 mb-8 w-full max-w-[200px] justify-center">
@@ -62,7 +62,7 @@ function ContactPage() {
   </form>
 </div></section>
 {/* Office Section */}
-<section className="w-full bg-surface-container-low py-section-gap px-container-padding border-t border-outline-variant/30">
+<section className="w-full bg-surface-container-low py-section-gap px-6 md:px-container-padding border-t border-outline-variant/30">
 <div className="max-w-6xl mx-auto">
 <h2 className="font-headline-lg text-headline-lg text-primary text-center mb-margin-lg">RISHI HOUSE</h2>
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
