@@ -34,12 +34,12 @@ function ContactPage() {
   
   <form className="w-full space-y-6 text-left">
     <div className="grid grid-cols-1 gap-6">
-      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Your Name *" required="" type="text" />
-      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Your Email *" required="" type="email" />
-      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Phone *" required="" type="tel" />
+      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Your Name *" required={true} type="text" />
+      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Your Email *" required={true} type="email" />
+      <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Phone *" required={true} type="tel" />
       <div className="relative">
         <select className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors text-on-surface-variant font-body-md appearance-none cursor-pointer rounded-none">
-          <option disabled="" selected="" value="">Select Your Project</option>
+          <option disabled={true} selected={true} value="">Select Your Project</option>
           <option value="project-1">Sun Glory</option>
           <option value="project-2">Sun Platina</option>
           <option value="project-3">Sun Emerald</option>
@@ -50,7 +50,7 @@ function ContactPage() {
 
     <div className="flex flex-col items-center gap-8 mt-12">
       <div className="flex items-start gap-3 max-w-[500px] text-center">
-        <input className="mt-1 text-secondary focus:ring-secondary border-outline-variant" id="privacy" required="" type="checkbox" />
+        <input className="mt-1 text-secondary focus:ring-secondary border-outline-variant" id="privacy" required={true} type="checkbox" />
         <label className="text-xs text-on-surface-variant leading-relaxed" htmlFor="privacy">
           I hereby authorize Rishi Builders and its affiliates to contact me via email, SMS, or phone calls. This consent overrides any registration on the DNC/NDNC registry.
         </label>
