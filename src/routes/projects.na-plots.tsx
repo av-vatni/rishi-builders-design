@@ -1,4 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+
+const STATUSES = ["ONGOING", "UPCOMING", "COMPLETED"] as const;
 
 export const Route = createFileRoute("/projects/na-plots")({
   head: () => ({
@@ -15,6 +18,7 @@ export const Route = createFileRoute("/projects/na-plots")({
 });
 
 function NaPlotsPage() {
+  const [status, setStatus] = useState<(typeof STATUSES)[number]>("ONGOING");
   return (
     <>
 {/* TopNavBar Shared Component */}
@@ -29,15 +33,13 @@ function NaPlotsPage() {
             </p>
 {/* Status Filters */}
 <div className="flex flex-wrap justify-center gap-4">
-<button className="px-8 py-3 bg-secondary text-on-secondary font-label-caps text-label-caps tracking-widest border border-secondary rounded-DEFAULT transition-all shadow-sm duration-300">
-                    ONGOING
-                </button>
-<button className="px-8 py-3 bg-surface text-secondary font-label-caps text-label-caps tracking-widest border border-secondary rounded-DEFAULT hover:bg-[#4a4a4a] hover:text-white transition-all duration-300">
-                    UPCOMING
-                </button>
-<button className="px-8 py-3 bg-surface text-secondary font-label-caps text-label-caps tracking-widest border border-secondary rounded-DEFAULT hover:bg-[#4a4a4a] hover:text-white transition-all duration-300">
-                    COMPLETED
-                </button>
+{STATUSES.map((s) => (
+  <button
+    key={s}
+    onClick={() => setStatus(s)}
+    className={`px-8 py-3 font-label-caps text-label-caps tracking-widest border border-secondary rounded-DEFAULT transition-all duration-300 ${status === s ? "bg-secondary text-on-secondary shadow-sm" : "bg-surface text-secondary hover:bg-[#4a4a4a] hover:text-white"}`}
+  >{s}</button>
+))}
 </div>
 </section>
 {/* Project Grid */}
