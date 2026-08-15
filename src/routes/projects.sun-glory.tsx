@@ -1,4 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+
+const HERO_IMAGES = [
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAnz1KsaHXn8dJdl2k5yVepM1QUGBA6DvTYzsyd8Bk_Qgfp-77GOcqVHAKiYQvvm_tyVxefvav_bLdrELkY7KxLeIluT7MNTQBETBNxF0ESBK-JjycHhGE0ahA9njB70NQNu9Ead7rv0OoY4y50vrxbm7hab0JevuV3dTWZaoHs76O01YDjhwy0aX9dobV8QdBsVAtNj3Ju5aMKaDxCaxoW9tyoMRATXnZ9BraLo_u3NYW270fCE5TiIg",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuDVQI_Wm-lyQA_TmuX68H8CoJ-Mek2d4DLEuWEnhAZSMjBJFM0UDehDMcYVhcWyShe_MCdm_wesVb8kGV9tPbMIgpR8frkg1bcD15DH7pZC_RXe0V6QtB8BBQlpAU366WX1WYXoesnpxcBAIZMZOTOhsxGq6XuAZcKzL3n_G28MA9ShALW9wUkglVI3Ve0DeKh9SaHruV2COvR1zcsp2uaRiwFQ0eacw6tQnnWhKrmxRxnPGwe5lxUOkQ",
+  "https://lh3.googleusercontent.com/aida-public/AB6AXuAzAqGFfr5lKC9KL_zJJfsG6fgMTT0CqlKp2-HlVKyTHw3T11PCRb2LjcOnbkGm5q4AqUJF3Iha5lAn10kJ4FwtXGDPAOozuixaWEI9vwqCJcxzMogAN5AVHRFVC3SbH3R9aQGwyB3nsHHMq4xU-LUj9DHYBwUC7PNjUWgj0eW_A02UhtDx3RCo2syD26v-TZy2w_JokAt9q3usrVK5cj6lZC3hrY5em0kjcuPCcxG0qjHM3HXwQ-kvww"
+];
+
+const AMENITIES = [
+  {
+    "alt": "Infinity Pool",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA5_yyo4SRoEtixgElHuRePOIgejadPBZM3BiJQ3EW_LKkQqq_GU84nPFc3nbuq_pCYDTsGwuHvqC78ozcwir7rNgTD8EClz-imbfhAftOMoSdIyGSPyJ9-Gsth84gq4nF2cKhQ05LANR7a_-9ar6Y87Oudda_LRVYt3NqFJxMai4Ft9s9zhFjWC1fcz4wsI9XrrWp2VCt5dZA41MWgSBejJf1ArRNHjo3fcoCb1Jw4y2Aha0w2Q82ulg",
+    "kicker": "WORLD-CLASS AMENITIES",
+    "title": "A Lifestyle of Unmatched Elegance",
+    "body": "Immerse yourself in tranquility with our temperature-controlled infinity pool offering panoramic views of the city skyline. A perfect retreat after a long day to rejuvenate your senses."
+  },
+  {
+    "alt": "State of the art Gym",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAYym5HO-SsZlC9hy3lbMaNtylTNPjBCO3ZDL4gscrd74uthtZEqW14d59NhP692On5qN5qOM6EBlm12P0sv_MtLQ9-2Ks1MaVj4R8U7lEhbubJUsz3XvhDPJX7UMxuMTlmD9F5AaH_NBufEkU7q3gwGEwSP8iTdN51bj2vccxI90A7nEBbPrMNbW3sqwce-j2sssCNVPaoScE42fWsLf8JkHKQv06GTu6evA6ma-Q5E9w77Tjwu1nUDQ",
+    "kicker": "HEALTH & WELLNESS",
+    "title": "State-of-the-Art Fitness",
+    "body": "Achieve your fitness goals in our fully equipped gymnasium featuring the latest cardio and strength training equipment, along with dedicated spaces for yoga and meditation."
+  },
+  {
+    "alt": "Clubhouse",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD8EojDvywpQZaH_ZeK23hbKsKfHqBjlgKKwZbLi4ZLcozUBjieJDnNQMcenIZ7J0FKEjKNt08LsMFaRCj-H2RboiPNiS9vqnrv3kpNSrHezUV7ndYlRg-vjw4XhZz-FSysh2jnKn1XX4PzVW-P9fmVFnMIZjE-k2QQlXCLp_pyaMQhqe6pUL7azcJzc8Olys2Omf__5766idhMvAt8weAhBsUJgOlJVGrq8706KVUSX7w88v7RPoA0Kw",
+    "kicker": "SOCIAL SPACES",
+    "title": "Exclusive Clubhouse",
+    "body": "Host gatherings or simply unwind in our elegantly designed clubhouse. Featuring a luxurious lounge, reading room, and private dining areas for your intimate celebrations."
+  }
+];
+
+const GALLERY = [
+  {
+    "alt": "Gallery Image 1",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD_Z08Zzb7rYH7w18lCcLUdTmJLkchoiXZBPhprKhzO6jgIIbX_5Wo751dEUjeKvL7-yFlGkOK3cBACP48wWAbI7lj7yOoNuFRUcyf8ypdIw3wsGFC5f9YIXNJCVW661G2r34-6zrVR57I_vaaFRYBCnVNoFVf42utJSXuUUxYN617fKbn_OTZDAO1__CbU6WIoPNE75OX-WMi8OYkYVlJHDNVuFVQjINwLvQDHkptlsPB2YvT-RFAkTA"
+  },
+  {
+    "alt": "Active Gallery Image",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDDJk6ePrMdWyhwHeuvBTGO_geuNgNCrVLEtNA-A6n0n0yIk5Iykea_T_PF2PvMaVasbQv1ZHRKXtUVQg0I-1EnH1kzQ8GPBtysoLZJY_-7DeK3bAcjbQDckKvqmVZpx76BpcqUN5v44rR-i46UDh0GKD9iX1emaM9Vr3LwtfmJbX7fKhzaxKYkT8B0_XyQW9XNbZweitAUrajsPEsRRMFZCPplz_eWsXnmLh78Mb0XsnhOpOiVqnobD5aFPBVzqvt3G80"
+  },
+  {
+    "alt": "Gallery Image 3",
+    "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD1qnKxmswsX1lJOHcJdqU5s9OOO1UeFNUvPcOIwZLPsHRYl8EVpxeOoOAsKMtY2VVp5E2n2J9u4dysI0F34ey0WCS8U6yh-sraockbuobEVbWQh0a7x495QE2vKeH7W0sGWeg6HKiVXNSf7BQsW9jghX-VVV4mfxmdHENBQoo73CDRZW2H7Aag2ZlpGt1hVPfQMcf0vEq1KzSrHYZicO7a4nUTiLaAHkjHXk_pSKWv7dnCFus4vZaelA"
+  }
+];
+
+
 
 export const Route = createFileRoute("/projects/sun-glory")({
   head: () => ({
@@ -15,6 +63,15 @@ export const Route = createFileRoute("/projects/sun-glory")({
 });
 
 function SunGloryPage() {
+  const [heroIdx, setHeroIdx] = useState(0);
+  const [amenIdx, setAmenIdx] = useState(0);
+  const [galIdx, setGalIdx] = useState(0);
+
+  useEffect(() => {
+    const t = setInterval(() => setHeroIdx((i) => (i + 1) % HERO_IMAGES.length), 6000);
+    return () => clearInterval(t);
+  }, []);
+
   return (
     <>
 {/* TopNavBar */}
@@ -24,19 +81,19 @@ function SunGloryPage() {
 <section className="relative w-full h-screen min-h-[600px] flex items-center justify-start overflow-hidden hero-carousel-container" id="hero">
 <div className="absolute inset-0 z-0">
 <div className="relative w-full h-full">
-<img className="w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ease-in-out hero-slide opacity-0" data-hero-slide="0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnz1KsaHXn8dJdl2k5yVepM1QUGBA6DvTYzsyd8Bk_Qgfp-77GOcqVHAKiYQvvm_tyVxefvav_bLdrELkY7KxLeIluT7MNTQBETBNxF0ESBK-JjycHhGE0ahA9njB70NQNu9Ead7rv0OoY4y50vrxbm7hab0JevuV3dTWZaoHs76O01YDjhwy0aX9dobV8QdBsVAtNj3Ju5aMKaDxCaxoW9tyoMRATXnZ9BraLo_u3NYW270fCE5TiIg" />
-<img className="w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ease-in-out hero-slide opacity-100" data-hero-slide="1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVQI_Wm-lyQA_TmuX68H8CoJ-Mek2d4DLEuWEnhAZSMjBJFM0UDehDMcYVhcWyShe_MCdm_wesVb8kGV9tPbMIgpR8frkg1bcD15DH7pZC_RXe0V6QtB8BBQlpAU366WX1WYXoesnpxcBAIZMZOTOhsxGq6XuAZcKzL3n_G28MA9ShALW9wUkglVI3Ve0DeKh9SaHruV2COvR1zcsp2uaRiwFQ0eacw6tQnnWhKrmxRxnPGwe5lxUOkQ" />
-<img className="w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ease-in-out hero-slide opacity-0" data-hero-slide="2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzAqGFfr5lKC9KL_zJJfsG6fgMTT0CqlKp2-HlVKyTHw3T11PCRb2LjcOnbkGm5q4AqUJF3Iha5lAn10kJ4FwtXGDPAOozuixaWEI9vwqCJcxzMogAN5AVHRFVC3SbH3R9aQGwyB3nsHHMq4xU-LUj9DHYBwUC7PNjUWgj0eW_A02UhtDx3RCo2syD26v-TZy2w_JokAt9q3usrVK5cj6lZC3hrY5em0kjcuPCcxG0qjHM3HXwQ-kvww" />
+{HERO_IMAGES.map((src, i) => (
+  <img key={src} alt="Sun Glory" className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ease-in-out ${heroIdx === i ? "opacity-100" : "opacity-0"}`} src={src} />
+))}
 <div className="absolute inset-0 bg-black/40"></div>
 </div>
 </div>
 <div className="relative z-10 px-6 md:px-container-padding w-full max-w-7xl mx-auto text-on-primary">
 </div>
 {/* Carousel Controls (Decorative) */}
-<button className="absolute left-8 top-1/2 -translate-y-1/2 z-20 text-on-primary hover:text-secondary transition-colors hero-prev">
+<button className="absolute left-8 top-1/2 -translate-y-1/2 z-20 text-on-primary hover:text-secondary transition-colors hero-prev" onClick={() => setHeroIdx((i) => (i + HERO_IMAGES.length - 1) % HERO_IMAGES.length)}>
 <span className="material-symbols-outlined text-5xl" style={{fontVariationSettings: "'wght' 200"}}>chevron_left</span>
 </button>
-<button className="absolute right-8 top-1/2 -translate-y-1/2 z-20 text-on-primary hover:text-secondary transition-colors hero-next">
+<button className="absolute right-8 top-1/2 -translate-y-1/2 z-20 text-on-primary hover:text-secondary transition-colors hero-next" onClick={() => setHeroIdx((i) => (i + 1) % HERO_IMAGES.length)}>
 <span className="material-symbols-outlined text-5xl" style={{fontVariationSettings: "'wght' 200"}}>chevron_right</span>
 </button>
 </section>
@@ -75,51 +132,33 @@ function SunGloryPage() {
 <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 items-stretch">
 {/* Image Carousel */}
 <div className="relative h-[400px] lg:h-auto overflow-hidden group amenities-carousel">
-{/* Slide 1 Image */}
-<div className="absolute inset-0 transition-opacity duration-700 ease-in-out amenities-slide-img opacity-0" data-slide="0">
-<img alt="Infinity Pool" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5_yyo4SRoEtixgElHuRePOIgejadPBZM3BiJQ3EW_LKkQqq_GU84nPFc3nbuq_pCYDTsGwuHvqC78ozcwir7rNgTD8EClz-imbfhAftOMoSdIyGSPyJ9-Gsth84gq4nF2cKhQ05LANR7a_-9ar6Y87Oudda_LRVYt3NqFJxMai4Ft9s9zhFjWC1fcz4wsI9XrrWp2VCt5dZA41MWgSBejJf1ArRNHjo3fcoCb1Jw4y2Aha0w2Q82ulg" />
-</div>
-{/* Slide 2 Image */}
-<div className="absolute inset-0 transition-opacity duration-700 ease-in-out amenities-slide-img opacity-100" data-slide="1">
-<img alt="State of the art Gym" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYym5HO-SsZlC9hy3lbMaNtylTNPjBCO3ZDL4gscrd74uthtZEqW14d59NhP692On5qN5qOM6EBlm12P0sv_MtLQ9-2Ks1MaVj4R8U7lEhbubJUsz3XvhDPJX7UMxuMTlmD9F5AaH_NBufEkU7q3gwGEwSP8iTdN51bj2vccxI90A7nEBbPrMNbW3sqwce-j2sssCNVPaoScE42fWsLf8JkHKQv06GTu6evA6ma-Q5E9w77Tjwu1nUDQ" />
-</div>
-{/* Slide 3 Image */}
-<div className="absolute inset-0 transition-opacity duration-700 ease-in-out amenities-slide-img opacity-0" data-slide="2">
-<img alt="Clubhouse" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8EojDvywpQZaH_ZeK23hbKsKfHqBjlgKKwZbLi4ZLcozUBjieJDnNQMcenIZ7J0FKEjKNt08LsMFaRCj-H2RboiPNiS9vqnrv3kpNSrHezUV7ndYlRg-vjw4XhZz-FSysh2jnKn1XX4PzVW-P9fmVFnMIZjE-k2QQlXCLp_pyaMQhqe6pUL7azcJzc8Olys2Omf__5766idhMvAt8weAhBsUJgOlJVGrq8706KVUSX7w88v7RPoA0Kw" />
-</div>
+{AMENITIES.map((a, i) => (
+  <div key={a.src} className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${amenIdx === i ? "opacity-100" : "opacity-0"}`}>
+    <img alt={a.alt} className="w-full h-full object-cover" src={a.src} />
+  </div>
+))}
 {/* Arrows */}
-<button className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 p-2 rounded-full transition-all duration-300 z-10 amenities-prev">
+<button className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 p-2 rounded-full transition-all duration-300 z-10 amenities-prev" onClick={() => setAmenIdx((i) => (i + AMENITIES.length - 1) % AMENITIES.length)}>
 <span className="material-symbols-outlined text-3xl">chevron_left</span>
 </button>
-<button className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 p-2 rounded-full transition-all duration-300 z-10 amenities-next">
+<button className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/20 hover:bg-black/40 p-2 rounded-full transition-all duration-300 z-10 amenities-next" onClick={() => setAmenIdx((i) => (i + 1) % AMENITIES.length)}>
 <span className="material-symbols-outlined text-3xl">chevron_right</span>
 </button>
 </div>
 {/* Text Content */}
 <div className="relative p-12 lg:p-24 flex flex-col justify-center bg-surface-container-low min-h-[500px]">
-{/* Slide 1 Text */}
-<div className="absolute inset-0 p-12 lg:p-24 flex flex-col justify-center transition-all duration-700 ease-in-out amenities-slide-text opacity-0 translate-y-4 pointer-events-none" data-slide="0">
-<p className="font-label-caps text-[14px] font-semibold tracking-[0.15em] mb-4" style={{color: "#AB8C47"}}>WORLD-CLASS AMENITIES</p>
-<h3 className="font-headline-xl text-4xl lg:text-5xl text-primary mb-6 leading-tight">A Lifestyle of Unmatched Elegance</h3>
-<p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">Immerse yourself in tranquility with our temperature-controlled infinity pool offering panoramic views of the city skyline. A perfect retreat after a long day to rejuvenate your senses.</p>
-</div>
-{/* Slide 2 Text */}
-<div className="absolute inset-0 p-12 lg:p-24 flex flex-col justify-center transition-all duration-700 ease-in-out amenities-slide-text opacity-100 translate-y-0" data-slide="1">
-<p className="font-label-caps text-[14px] font-semibold tracking-[0.15em] mb-4" style={{color: "#AB8C47"}}>HEALTH &amp; WELLNESS</p>
-<h3 className="font-headline-xl text-4xl lg:text-5xl text-primary mb-6 leading-tight">State-of-the-Art Fitness</h3>
-<p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">Achieve your fitness goals in our fully equipped gymnasium featuring the latest cardio and strength training equipment, along with dedicated spaces for yoga and meditation.</p>
-</div>
-{/* Slide 3 Text */}
-<div className="absolute inset-0 p-12 lg:p-24 flex flex-col justify-center transition-all duration-700 ease-in-out amenities-slide-text opacity-0 translate-y-4 pointer-events-none" data-slide="2">
-<p className="font-label-caps text-[14px] font-semibold tracking-[0.15em] mb-4" style={{color: "#AB8C47"}}>SOCIAL SPACES</p>
-<h3 className="font-headline-xl text-4xl lg:text-5xl text-primary mb-6 leading-tight">Exclusive Clubhouse</h3>
-<p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">Host gatherings or simply unwind in our elegantly designed clubhouse. Featuring a luxurious lounge, reading room, and private dining areas for your intimate celebrations.</p>
-</div>
+{AMENITIES.map((a, i) => (
+  <div key={a.title} className={`absolute inset-0 p-12 lg:p-24 flex flex-col justify-center transition-all duration-700 ease-in-out ${amenIdx === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
+    <p className="font-label-caps text-[14px] font-semibold tracking-[0.15em] mb-4" style={{color: "#AB8C47"}}>{a.kicker}</p>
+    <h3 className="font-headline-xl text-4xl lg:text-5xl text-primary mb-6 leading-tight">{a.title}</h3>
+    <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">{a.body}</p>
+  </div>
+))}
 {/* Pagination Dots */}
 <div className="absolute bottom-8 left-12 lg:left-24 flex space-x-3 z-10">
-<button className="w-3 h-3 rounded-full transition-colors duration-300 amenities-dot bg-outline-variant" data-target="0"></button>
-<button className="w-3 h-3 rounded-full hover:bg-outline transition-colors duration-300 amenities-dot" data-target="1" style={{backgroundColor: "rgb(171, 140, 71)"}}></button>
-<button className="w-3 h-3 rounded-full hover:bg-outline transition-colors duration-300 amenities-dot bg-outline-variant" data-target="2"></button>
+{AMENITIES.map((a, i) => (
+  <button key={a.src} aria-label={`Show ${a.title}`} onClick={() => setAmenIdx(i)} className="w-3 h-3 rounded-full transition-colors duration-300" style={{backgroundColor: amenIdx === i ? "#AB8C47" : "var(--color-outline-variant, #cac4d0)"}}></button>
+))}
 </div>
 </div>
 </div>
@@ -132,26 +171,29 @@ function SunGloryPage() {
 </div>
 <div className="relative max-w-[1920px] mx-auto px-4 md:px-0">
 <div className="flex items-center justify-center gap-4 md:gap-8 overflow-hidden h-[400px] md:h-[600px] relative gallery-carousel">
-{/* Left Image (Peek) */}
-<div className="absolute w-[60%] md:w-[40%] transition-all duration-700 transform gallery-slide -translate-x-[60%] md:-translate-x-[70%] opacity-40 scale-90 z-0" data-pos="prev">
-<img alt="Gallery Image 1" className="w-full h-full object-cover rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_Z08Zzb7rYH7w18lCcLUdTmJLkchoiXZBPhprKhzO6jgIIbX_5Wo751dEUjeKvL7-yFlGkOK3cBACP48wWAbI7lj7yOoNuFRUcyf8ypdIw3wsGFC5f9YIXNJCVW661G2r34-6zrVR57I_vaaFRYBCnVNoFVf42utJSXuUUxYN617fKbn_OTZDAO1__CbU6WIoPNE75OX-WMi8OYkYVlJHDNVuFVQjINwLvQDHkptlsPB2YvT-RFAkTA" />
+{GALLERY.map((g, i) => {
+  const rel = (i - galIdx + GALLERY.length) % GALLERY.length;
+  const cls = rel === 0
+    ? "w-[80%] md:w-[50%] translate-x-0 opacity-100 scale-100 z-10"
+    : rel === GALLERY.length - 1
+      ? "w-[60%] md:w-[40%] -translate-x-[60%] md:-translate-x-[70%] opacity-40 scale-90 z-0"
+      : "w-[60%] md:w-[40%] translate-x-[60%] md:translate-x-[70%] opacity-40 scale-90 z-0";
+  return (
+    <div key={g.src} className={`absolute transition-all duration-700 transform ${cls}`}>
+      <img alt={g.alt} className="w-full h-full object-cover rounded-xl shadow-2xl" src={g.src} />
+      {rel === 0 && (
+        <div className="absolute bottom-8 left-8 bg-black/40 backdrop-blur-md px-6 py-2 border-l-2 border-[#AB8C47]">
+          <p className="text-white font-label-caps text-sm tracking-widest uppercase">{g.alt}</p>
+        </div>
+      )}
+    </div>
+  );
+})}
 </div>
-{/* Center Image (Active) */}
-<div className="absolute w-[80%] md:w-[50%] transition-all duration-700 transform gallery-slide translate-x-0 opacity-100 scale-100 z-10" data-pos="active">
-<img alt="Active Gallery Image" className="w-full h-full object-cover rounded-xl shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDJk6ePrMdWyhwHeuvBTGO_geuNgNCrVLEtNA-A6n0n0yIk5Iykea_T_PF2PvMaVasbQv1ZHRKXtUVQg0I-1EnH1kzQ8GPBtysoLZJY_-7DeK3bAcjbQDckKvqmVZpx76BpcqUN5v44rR-i46UDh0GKD9iX1emaM9Vr3LwtfmJbX7fKhzaxKYkT8B0_XyQW9XNbZweitAUrajsPEsRRMFZCPplz_eWsXnmLh78Mb0XsnhOpOiVqnobD5aFPBVzqvt3G80" />
-<div className="absolute bottom-8 left-8 bg-black/40 backdrop-blur-md px-6 py-2 border-l-2 border-[#AB8C47]">
-<p className="text-white font-label-caps text-sm tracking-widest uppercase">Exterior View</p>
-</div>
-</div>
-{/* Right Image (Peek) */}
-<div className="absolute w-[60%] md:w-[40%] transition-all duration-700 transform gallery-slide translate-x-[60%] md:translate-x-[70%] opacity-40 scale-90 z-0" data-pos="next">
-<img alt="Gallery Image 3" className="w-full h-full object-cover rounded-xl shadow-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1qnKxmswsX1lJOHcJdqU5s9OOO1UeFNUvPcOIwZLPsHRYl8EVpxeOoOAsKMtY2VVp5E2n2J9u4dysI0F34ey0WCS8U6yh-sraockbuobEVbWQh0a7x495QE2vKeH7W0sGWeg6HKiVXNSf7BQsW9jghX-VVV4mfxmdHENBQoo73CDRZW2H7Aag2ZlpGt1hVPfQMcf0vEq1KzSrHYZicO7a4nUTiLaAHkjHXk_pSKWv7dnCFus4vZaelA" />
-</div>
-</div>
-<button className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 gallery-prev">
+<button className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 gallery-prev" onClick={() => setGalIdx((i) => (i + GALLERY.length - 1) % GALLERY.length)}>
 <span className="material-symbols-outlined text-3xl">chevron_left</span>
 </button>
-<button className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 gallery-next">
+<button className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-primary p-3 rounded-full shadow-lg transition-all duration-300 gallery-next" onClick={() => setGalIdx((i) => (i + 1) % GALLERY.length)}>
 <span className="material-symbols-outlined text-3xl">chevron_right</span>
 </button>
 </div>
