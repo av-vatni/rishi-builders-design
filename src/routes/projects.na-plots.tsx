@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 
 const STATUSES = ["ONGOING", "UPCOMING", "COMPLETED"] as const;
@@ -54,12 +54,12 @@ function NaPlotsPage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Aura Estates<br /><span className="text-lg">North Valley</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">Exclusive 5-acre plots designed for bespoke architectural visions, surrounded by protected woodlands.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div>
 {/* Card 2: The Grove */}
@@ -72,12 +72,12 @@ function NaPlotsPage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">The Grove<br /><span className="text-lg">West Hills</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">Premium lifestyle community offering unparalleled views and integrated smart-infrastructure.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div>
 {/* Card 3: Lakeside Enclave */}
@@ -90,12 +90,12 @@ function NaPlotsPage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Lakeside Enclave<br /><span className="text-lg">Eastern Shores</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">Waterfront properties offering a rare blend of tranquility and proximity to urban centers.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div></div>
 </section>

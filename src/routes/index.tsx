@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/")({
@@ -158,12 +158,12 @@ function HomePage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Garnet<br /><span className="text-lg">Keshav Nagar</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">Premium residential building featuring a sophisticated facade with a mix of glass and solid panels.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div>
 <div className="relative group cursor-pointer pt-4 pb-20">
@@ -175,12 +175,12 @@ function HomePage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Regalia<br /><span className="text-lg">Sinhagad Road</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">A sprawling luxury complex nestled in a quiet urban setting, highlighting premium residential living.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div>
 <div className="relative group cursor-pointer pt-4 pb-20">
@@ -192,12 +192,12 @@ function HomePage() {
 <h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Platina<br /><span className="text-lg">Kharadi</span></h3>
 <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
 <p className="text-white/90 text-sm mb-4">A sprawling luxury complex reflecting growth and investment potential in Pune's top hotspot.</p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<button className="bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</button>
+<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
 </div>
 </div>
 </div>
