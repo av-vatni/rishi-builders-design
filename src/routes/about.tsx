@@ -1,4 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+
+const MILESTONE_PERIODS = [
+  { id: "1998-2008", label: "1998 - 2008" },
+  { id: "2009-2019", label: "2009 - 2019" },
+  { id: "2020-present", label: "2020 - Present" },
+] as const;
+
+type PeriodId = (typeof MILESTONE_PERIODS)[number]["id"];
+
+const MILESTONES: Record<PeriodId, { name: string; location: string }[]> = {
+  "1998-2008": [
+    { name: "Sun City I", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun City II", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun Paradise I", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun Paradise II", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun Empire", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun Galaxy", location: "Vadgaon BK" },
+    { name: "Sun Orbit", location: "Anand Nagar, Sinhgad Road" },
+    { name: "Sun Residency", location: "Dhayari" },
+    { name: "Sun Orion", location: "Vadgaon BK" },
+    { name: "Sun Satellite", location: "Anandnagar, Sinhgad Road" },
+    { name: "Sun Horizon", location: "Balewadi, Near Sadanand Hotel" },
+  ],
+  "2009-2019": [
+    { name: "Sun Exotica", location: "Kondhwa" },
+    { name: "Sun Grandeur", location: "Bavdhan" },
+    { name: "Sun Solitaire", location: "Kalyani Nagar" },
+  ],
+  "2020-present": [
+    { name: "Sun Glory", location: "Sinhgad Road" },
+    { name: "Sun Platina", location: "Kothrud" },
+  ],
+};
 
 export const Route = createFileRoute("/about")({
   head: () => ({
