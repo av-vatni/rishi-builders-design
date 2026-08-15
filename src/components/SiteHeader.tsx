@@ -50,15 +50,11 @@ export function SiteHeader() {
               <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <span className="flex items-center gap-1 cursor-pointer">Projects</span>
               <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] bg-white rounded-b-xl z-50 mt-2 overflow-hidden shadow-xl">
+              <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] pt-4 z-50">
+                <div className="bg-white rounded-b-xl overflow-hidden shadow-xl">
                 <div className="flex flex-col">
-                  <Link
-                    to="/projects/residential"
-                    className="px-6 py-4 text-on-surface hover:bg-surface-container-low transition-colors border-b border-gray-100 uppercase font-bold text-xs tracking-widest"
-                  >
-                    All Projects
-                  </Link>
                   <div className="px-6 py-4">
+
                     <div className="text-[#b08d57] font-label-caps text-xs mb-3 tracking-widest font-bold uppercase">
                       LAND PROJECTS
                     </div>
