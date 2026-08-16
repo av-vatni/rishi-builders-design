@@ -174,12 +174,12 @@ function SunGloryPage() {
 {GALLERY.map((g, i) => {
   const rel = (i - galIdx + GALLERY.length) % GALLERY.length;
   const cls = rel === 0
-    ? "w-[80%] md:w-[50%] translate-x-0 opacity-100 scale-100 z-10"
+    ? "w-[80%] h-[75%] md:h-[85%] md:w-[50%] translate-x-0 opacity-100 scale-100 z-10"
     : rel === GALLERY.length - 1
-      ? "w-[60%] md:w-[40%] -translate-x-[60%] md:-translate-x-[70%] opacity-40 scale-90 z-0"
-      : "w-[60%] md:w-[40%] translate-x-[60%] md:translate-x-[70%] opacity-40 scale-90 z-0";
+      ? "w-[60%] h-[65%] md:h-[75%] md:w-[40%] -translate-x-[60%] md:-translate-x-[70%] opacity-40 scale-90 z-0"
+      : "w-[60%] h-[65%] md:h-[75%] md:w-[40%] translate-x-[60%] md:translate-x-[70%] opacity-40 scale-90 z-0";
   return (
-    <div key={g.src} className={`absolute transition-all duration-700 transform ${cls}`}>
+    <div key={g.src} className={`absolute top-1/2 -translate-y-1/2 transition-all duration-700 transform ${cls}`}>
       <img alt={g.alt} className="w-full h-full object-cover rounded-xl shadow-2xl" src={g.src} />
       {rel === 0 && (
         <div className="absolute bottom-8 left-8 bg-black/40 backdrop-blur-md px-6 py-2 border-l-2 border-[#AB8C47]">
