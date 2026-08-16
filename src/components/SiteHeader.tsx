@@ -148,12 +148,114 @@ export function SiteHeader() {
           )}
           <Link
             to="/contact"
-            className="bg-[#b08d57] text-white font-label-caps text-sm px-6 md:px-8 py-3 border border-[#b08d57] hover:bg-[#4a4a4a] transition-colors duration-300 uppercase tracking-widest"
+            className="hidden sm:inline-block bg-[#b08d57] text-white font-label-caps text-xs md:text-sm px-4 md:px-8 py-3 border border-[#b08d57] hover:bg-[#4a4a4a] transition-colors duration-300 uppercase tracking-widest whitespace-nowrap"
           >
             ENQUIRE NOW
           </Link>
+          <button
+            type="button"
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            className={`md:hidden flex items-center justify-center w-10 h-10 rounded border transition-colors ${
+              light
+                ? "border-black/15 text-[#4a4a4a]"
+                : "border-white/30 text-white"
+            }`}
+          >
+            <span className="material-symbols-outlined">
+              {menuOpen ? "close" : "menu"}
+            </span>
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div
+          className={`md:hidden w-full border-t ${
+            light
+              ? "bg-white border-black/10 text-[#4a4a4a]"
+              : "bg-[#4a4a4a] border-white/15 text-white"
+          }`}
+        >
+          <div className="px-6 py-5 flex flex-col gap-4 font-nav-link text-nav-link max-h-[70vh] overflow-y-auto">
+            {light ? (
+              SECTION_LINKS.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMenuOpen(false);
+                    document
+                      .querySelector(item.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="py-1 hover:text-[#b08d57] transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))
+            ) : (
+              <>
+                <Link to="/" onClick={() => setMenuOpen(false)} className="py-1">
+                  Home
+                </Link>
+                <Link to="/about" onClick={() => setMenuOpen(false)} className="py-1">
+                  About
+                </Link>
+                <div className="flex flex-col gap-3">
+                  <span className="text-[#b08d57] text-xs tracking-widest font-bold uppercase">
+                    Land Projects
+                  </span>
+                  <Link
+                    to="/projects/na-plots"
+                    onClick={() => setMenuOpen(false)}
+                    className="pl-4 text-sm"
+                  >
+                    NA Plots
+                  </Link>
+                  <Link
+                    to="/projects/agricultural-land"
+                    onClick={() => setMenuOpen(false)}
+                    className="pl-4 text-sm"
+                  >
+                    Agricultural Land
+                  </Link>
+                  <span className="text-[#b08d57] text-xs tracking-widest font-bold uppercase mt-2">
+                    Construction Projects
+                  </span>
+                  <Link
+                    to="/projects/residential"
+                    onClick={() => setMenuOpen(false)}
+                    className="pl-4 text-sm"
+                  >
+                    Residential Projects
+                  </Link>
+                  <Link
+                    to="/projects/commercial"
+                    onClick={() => setMenuOpen(false)}
+                    className="pl-4 text-sm"
+                  >
+                    Commercial Projects
+                  </Link>
+                </div>
+                <Link to="/contact" onClick={() => setMenuOpen(false)} className="py-1">
+                  Contact
+                </Link>
+              </>
+            )}
+            <Link
+              to="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 bg-[#b08d57] text-white text-center font-label-caps text-sm px-6 py-3 uppercase tracking-widest"
+            >
+              Enquire Now
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
