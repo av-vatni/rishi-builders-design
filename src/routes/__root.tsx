@@ -15,6 +15,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { ProjectFooter } from "../components/ProjectFooter";
+import { LandFooter } from "../components/LandFooter";
 
 
 function NotFoundComponent() {
@@ -132,9 +133,9 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const isProjectDetail =
-    pathname.startsWith("/projects/sun-glory") ||
-    pathname.startsWith("/projects/land");
+  const isSunGlory = pathname.startsWith("/projects/sun-glory");
+  const isLand = pathname.startsWith("/projects/land");
+  const isProjectDetail = isSunGlory || isLand;
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -144,7 +145,7 @@ function RootComponent() {
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </div>
-        {isProjectDetail ? <ProjectFooter /> : <SiteFooter />}
+        {isSunGlory ? <ProjectFooter /> : isLand ? <LandFooter /> : <SiteFooter />}
       </div>
     </QueryClientProvider>
   );
