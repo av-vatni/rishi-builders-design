@@ -198,7 +198,7 @@ function SunGloryPage() {
 </button>
 </div>
 </section>
-<section className="py-section-gap bg-background" id="floor-plan">
+<section className="py-section-gap bg-background overflow-hidden" id="floor-plan">
 <div className="text-center mb-12">
 <p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Architectural Layout</p>
 <h2 className="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-widest">FLOOR PLAN</h2>
@@ -206,10 +206,10 @@ function SunGloryPage() {
 </div>
 <div className="max-w-7xl mx-auto px-6 md:px-container-padding">
 {/* Tabs */}
-<div className="flex flex-wrap justify-center gap-4 mb-12">
-<button className="px-8 py-3 border border-[#AB8C47] bg-[#AB8C47] text-white font-label-caps text-sm tracking-widest transition-all">3 BHK LUXURY</button>
-<button className="px-8 py-3 border border-outline-variant/30 text-on-surface-variant font-label-caps text-sm tracking-widest hover:border-[#AB8C47] transition-all">2.5 BHK PREMIUM</button>
-<button className="px-8 py-3 border border-outline-variant/30 text-on-surface-variant font-label-caps text-sm tracking-widest hover:border-[#AB8C47] transition-all">3 BHK XXL</button>
+<div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 px-6">
+<button className="px-4 md:px-8 py-3 border border-[#AB8C47] bg-[#AB8C47] text-white font-label-caps text-sm tracking-widest transition-all">3 BHK LUXURY</button>
+<button className="px-4 md:px-8 py-3 border border-outline-variant/30 text-on-surface-variant font-label-caps text-sm tracking-widest hover:border-[#AB8C47] transition-all">2.5 BHK PREMIUM</button>
+<button className="px-4 md:px-8 py-3 border border-outline-variant/30 text-on-surface-variant font-label-caps text-sm tracking-widest hover:border-[#AB8C47] transition-all">3 BHK XXL</button>
 </div>
 {/* Content Split */}
 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -243,13 +243,13 @@ function SunGloryPage() {
 <p className="font-label-caps text-xs text-secondary uppercase mb-1">Total Carpet Area</p>
 <p className="font-headline-lg text-3xl text-primary">1,450 Sq. Ft.</p>
 </div>
-<button className="bg-[#AB8C47] text-white font-label-caps text-sm px-10 py-4 hover:bg-[#9A7B4C] transition-colors duration-300 uppercase tracking-widest w-fit">
+<button className="bg-[#AB8C47] text-white font-label-caps text-sm px-6 md:px-10 py-4 hover:bg-[#9A7B4C] transition-colors duration-300 uppercase tracking-widest w-fit">
 REQUEST BROCHURE
 </button>
 </div>
 </div>
 </div>
-</section><section className="py-section-gap bg-background overflow-hidden" id="location"><div className="max-w-7xl mx-auto px-6 md:px-container-padding"><div className="text-center mb-16"><p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">DISCOVER THE NEIGHBORHOOD</p><h2 className="font-headline-xl text-headline-xl text-primary mb-4">Strategic Location</h2><div className="w-24 h-[1px] bg-secondary mx-auto"></div></div><div className="mb-16 rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20"><img alt="Strategic Location Map" className="w-full h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsbpawNQb92x8dlWbalPtyTyteh6ksFWQTLFaQY96S9nUmqo8D3hNiRs9CrArvp4bu4OPwQQSDPEH7GdNmyiL1duLXOgtUEA8iA9YjaJ5Nrhb4geG5YcQsWYIiUUBFm98wrdbcWVocw6onoLbxQes-FLTXjJDcyBNY-SDMuSoB37300AZOk_jnGcMMFGQUpb39R6c5KjhJy7LMOZ_YwvnO4991pZ3JRFnKJ98KPjwY8nm3VdgcIjJU3_efu" /></div></div></section>
+</section><section className="py-section-gap bg-background overflow-hidden" id="location"><div className="max-w-7xl mx-auto px-6 md:px-container-padding"><div className="text-center mb-16"><p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">DISCOVER THE NEIGHBORHOOD</p><h2 className="font-headline-xl text-headline-xl text-primary mb-4">Strategic Location</h2><div className="w-24 h-[1px] bg-secondary mx-auto"></div></div><div className="mb-16 rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20"><img alt="Strategic Location Map" className="w-full h-[280px] md:h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsbpawNQb92x8dlWbalPtyTyteh6ksFWQTLFaQY96S9nUmqo8D3hNiRs9CrArvp4bu4OPwQQSDPEH7GdNmyiL1duLXOgtUEA8iA9YjaJ5Nrhb4geG5YcQsWYIiUUBFm98wrdbcWVocw6onoLbxQes-FLTXjJDcyBNY-SDMuSoB37300AZOk_jnGcMMFGQUpb39R6c5KjhJy7LMOZ_YwvnO4991pZ3JRFnKJ98KPjwY8nm3VdgcIjJU3_efu" /></div></div></section>
 {/* Location Section */}
 </main>
 {/* Footer */}
