@@ -4,8 +4,18 @@ import rishiLogo from "../assets/rishi-logo.png.asset.json";
 
 const navLinkClass = "transition-colors";
 
+const SECTION_LINKS = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Amenities", href: "#amenities" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Floor Plan", href: "#floor-plan" },
+  { label: "Location", href: "#location" },
+];
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const light = pathname.startsWith("/projects/sun-glory");
 
@@ -15,6 +25,10 @@ export function SiteHeader() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
     <nav
