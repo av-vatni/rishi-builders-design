@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 type ProjectCardProps = {
   image: string;
@@ -12,8 +11,16 @@ type ProjectCardProps = {
 
 export function ProjectCard({ image, title, subtitle, description, to }: ProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
+  const [noHover, setNoHover] = useState(false);
   const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(hover: none), (max-width: 1023px)");
+    const sync = () => setNoHover(mql.matches);
+    sync();
+    mql.addEventListener("change", sync);
+    return () => mql.removeEventListener("change", sync);
+  }, []);
 
   useEffect(() => {
     const el = ref.current;
@@ -26,7 +33,7 @@ export function ProjectCard({ image, title, subtitle, description, to }: Project
     return () => io.disconnect();
   }, []);
 
-  const expanded = isMobile && inView;
+  const expanded = noHover && inView;
 
   return (
     <div ref={ref} className="relative group cursor-pointer pt-4 pb-16 sm:pb-20">
