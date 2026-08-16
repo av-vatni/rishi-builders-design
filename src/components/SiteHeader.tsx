@@ -7,7 +7,7 @@ const navLinkClass = "transition-colors";
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const transparent = pathname.startsWith("/projects/sun-glory") && !scrolled;
+  const light = pathname.startsWith("/projects/sun-glory");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -19,8 +19,8 @@ export function SiteHeader() {
   return (
     <nav
       className={`full-width top-0 sticky z-50 transition-all duration-300 ${
-        transparent
-          ? "bg-transparent absolute backdrop-blur-sm border-b border-white/20"
+        light
+          ? "bg-white/95 backdrop-blur-sm border-b border-black/10"
           : "bg-[#4a4a4a]"
       }`}
     >
@@ -39,25 +39,25 @@ export function SiteHeader() {
           />
         </Link>
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-white">
+          <div className={`hidden md:flex items-center gap-8 font-nav-link text-nav-link ${light ? "text-[#4a4a4a]" : "text-white"}`}>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/" className={navLinkClass}>
                 Home
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/about" className={navLinkClass}>
                 About
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <span className="flex items-center gap-1 cursor-pointer">Projects</span>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] pt-4 z-50">
                 <div className="bg-white rounded-b-xl overflow-hidden shadow-xl">
                 <div className="flex flex-col">
@@ -106,11 +106,11 @@ export function SiteHeader() {
 
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/contact" className={navLinkClass}>
                 Contact
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
           </div>
           <Link
