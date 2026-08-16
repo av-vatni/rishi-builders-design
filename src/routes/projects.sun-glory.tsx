@@ -198,6 +198,26 @@ function SunGloryPage() {
 </button>
 </div>
 </section>
+<section className="py-section-gap bg-surface overflow-hidden">
+<div className="max-w-7xl mx-auto px-6 md:px-container-padding">
+<div className="text-center mb-12">
+<p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Watch</p>
+<h2 className="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-widest">PROJECT VIDEO</h2>
+<div className="w-24 h-[1px] bg-secondary mx-auto"></div>
+</div>
+<div className="relative w-full overflow-hidden rounded-xl shadow-2xl border border-outline-variant/20" style={{aspectRatio: "16 / 9"}}>
+<iframe
+className="absolute inset-0 w-full h-full"
+src="https://www.youtube.com/embed/uySn1BZiWWs?autoplay=1&mute=1&loop=1&playlist=uySn1BZiWWs&controls=1&rel=0&modestbranding=1&playsinline=1"
+title="Sun Glory Project Video"
+frameBorder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowFullScreen
+referrerPolicy="strict-origin-when-cross-origin"
+></iframe>
+</div>
+</div>
+</section>
 <section className="py-section-gap bg-background overflow-hidden" id="floor-plan">
 <div className="text-center mb-12">
 <p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Architectural Layout</p>
