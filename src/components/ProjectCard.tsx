@@ -41,7 +41,7 @@ export function ProjectCard({ image, title, subtitle, description, to }: Project
         <img alt={title} className="w-full h-full object-cover" src={image} loading="lazy" />
       </div>
       <div
-        style={expanded ? { height: 240 } : undefined}
+        style={expanded ? { height: "auto", minHeight: 200 } : undefined}
         className="absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] md:group-hover:h-[240px] shadow-lg"
       >
         <div className="p-4 sm:p-6 flex flex-col items-center justify-end w-full h-full">
