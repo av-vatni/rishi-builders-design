@@ -39,80 +39,106 @@ export function SiteHeader() {
           />
         </Link>
         <div className="flex items-center gap-8">
-          <div className={`hidden md:flex items-center gap-8 font-nav-link text-nav-link ${light ? "text-[#4a4a4a]" : "text-white"}`}>
-            <div className="relative group py-2">
-              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-              <Link to="/" className={navLinkClass}>
-                Home
-              </Link>
-              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
+          {light ? (
+            <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-[#4a4a4a]">
+              {[
+                { label: "Home", href: "#hero" },
+                { label: "About", href: "#about" },
+                { label: "Amenities", href: "#amenities" },
+                { label: "Gallery", href: "#gallery" },
+                { label: "Floor Plan", href: "#floor-plan" },
+                { label: "Location", href: "#location" },
+              ].map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector(item.href)
+                      ?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className="relative group py-2 transition-colors hover:text-[#b08d57]"
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#b08d57] scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                </a>
+              ))}
             </div>
-            <div className="relative group py-2">
-              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-              <Link to="/about" className={navLinkClass}>
-                About
-              </Link>
-              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-            </div>
-            <div className="relative group py-2">
-              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-              <span className="flex items-center gap-1 cursor-pointer">Projects</span>
-              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-              <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] pt-4 z-50">
-                <div className="bg-white rounded-b-xl overflow-hidden shadow-xl">
-                <div className="flex flex-col">
-                  <div className="px-6 py-4">
-
-                    <div className="text-[#b08d57] font-label-caps text-xs mb-3 tracking-widest font-bold uppercase">
-                      LAND PROJECTS
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <Link
-                        to="/projects/na-plots"
-                        className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
-                      >
-                        NA Plots
-                      </Link>
-                      <Link
-                        to="/projects/agricultural-land"
-                        className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
-                      >
-                        Agricultural Land
-                      </Link>
+          ) : (
+            <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-white">
+              <div className="relative group py-2">
+                <div className="absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+                <Link to="/" className={navLinkClass}>
+                  Home
+                </Link>
+                <div className="absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+              </div>
+              <div className="relative group py-2">
+                <div className="absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+                <Link to="/about" className={navLinkClass}>
+                  About
+                </Link>
+                <div className="absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+              </div>
+              <div className="relative group py-2">
+                <div className="absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+                <span className="flex items-center gap-1 cursor-pointer">Projects</span>
+                <div className="absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+                <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] pt-4 z-50">
+                  <div className="bg-white rounded-b-xl overflow-hidden shadow-xl">
+                    <div className="flex flex-col">
+                      <div className="px-6 py-4">
+                        <div className="text-[#b08d57] font-label-caps text-xs mb-3 tracking-widest font-bold uppercase">
+                          LAND PROJECTS
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <Link
+                            to="/projects/na-plots"
+                            className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
+                          >
+                            NA Plots
+                          </Link>
+                          <Link
+                            to="/projects/agricultural-land"
+                            className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
+                          >
+                            Agricultural Land
+                          </Link>
+                        </div>
+                      </div>
+                      <div className="px-6 py-4 border-t border-gray-100">
+                        <div className="text-[#b08d57] font-label-caps text-xs mb-3 tracking-widest font-bold uppercase">
+                          CONSTRUCTION PROJECTS
+                        </div>
+                        <div className="flex flex-col gap-3">
+                          <Link
+                            to="/projects/residential"
+                            className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
+                          >
+                            Residential Projects
+                          </Link>
+                          <Link
+                            to="/projects/commercial"
+                            className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
+                          >
+                            Commercial Projects
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="px-6 py-4 border-t border-gray-100">
-                    <div className="text-[#b08d57] font-label-caps text-xs mb-3 tracking-widest font-bold uppercase">
-                      CONSTRUCTION PROJECTS
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <Link
-                        to="/projects/residential"
-                        className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
-                      >
-                        Residential Projects
-                      </Link>
-                      <Link
-                        to="/projects/commercial"
-                        className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
-                      >
-                        Commercial Projects
-                      </Link>
-                    </div>
-                  </div>
-                </div>
                 </div>
               </div>
-
+              <div className="relative group py-2">
+                <div className="absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+                <Link to="/contact" className={navLinkClass}>
+                  Contact
+                </Link>
+                <div className="absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity bg-white"></div>
+              </div>
             </div>
-            <div className="relative group py-2">
-              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-              <Link to="/contact" className={navLinkClass}>
-                Contact
-              </Link>
-              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
-            </div>
-          </div>
+          )}
           <Link
             to="/contact"
             className="bg-[#b08d57] text-white font-label-caps text-sm px-6 md:px-8 py-3 border border-[#b08d57] hover:bg-[#4a4a4a] transition-colors duration-300 uppercase tracking-widest"
