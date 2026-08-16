@@ -13,11 +13,19 @@ const SECTION_LINKS = [
   { label: "Location", href: "#location" },
 ];
 
+const LAND_SECTION_LINKS = [
+  { label: "Home", href: "#hero" },
+  { label: "About", href: "#about" },
+  { label: "Location", href: "#location" },
+];
+
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
-  const light = pathname.startsWith("/projects/sun-glory");
+  const isLand = pathname.startsWith("/projects/land");
+  const light = isLand || pathname.startsWith("/projects/sun-glory");
+  const sectionLinks = isLand ? LAND_SECTION_LINKS : SECTION_LINKS;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -55,7 +63,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-4 md:gap-8">
           {light ? (
             <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-[#4a4a4a]">
-              {SECTION_LINKS.map((item) => (
+              {sectionLinks.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -181,7 +189,7 @@ export function SiteHeader() {
         >
           <div className="px-6 py-5 flex flex-col gap-4 font-nav-link text-nav-link max-h-[70vh] overflow-y-auto">
             {light ? (
-              SECTION_LINKS.map((item) => (
+              sectionLinks.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
