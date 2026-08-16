@@ -198,13 +198,8 @@ function SunGloryPage() {
 </button>
 </div>
 </section>
-<section className="py-section-gap bg-surface overflow-hidden">
+<section className="bg-surface overflow-hidden py-8">
 <div className="max-w-7xl mx-auto px-6 md:px-container-padding">
-<div className="text-center mb-12">
-<p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Watch</p>
-<h2 className="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-widest">PROJECT VIDEO</h2>
-<div className="w-24 h-[1px] bg-secondary mx-auto"></div>
-</div>
 <div className="relative w-full overflow-hidden rounded-xl shadow-2xl border border-outline-variant/20" style={{aspectRatio: "16 / 9"}}>
 <iframe
 className="absolute inset-0 w-full h-full"
