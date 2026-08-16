@@ -221,7 +221,7 @@ function SunGloryPage() {
 <div className="flex flex-col">
 <h3 className="font-headline-lg text-headline-lg text-primary mb-4">The Grand Residences</h3>
 <p className="font-body-lg text-on-surface-variant mb-8 leading-relaxed">Designed for the modern family, our 3 BHK Luxury units offer expansive living areas with double-height ceilings and premium finishes that define sophisticated urban living.</p>
-<div className="grid grid-cols-2 gap-6 mb-10">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
 <div className="flex items-center gap-3">
 <span className="material-symbols-outlined text-secondary">air</span>
 <span className="font-label-caps text-xs uppercase tracking-wider">Cross Ventilation</span>
