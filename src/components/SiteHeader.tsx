@@ -52,17 +52,10 @@ export function SiteHeader() {
             }`}
           />
         </Link>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
           {light ? (
             <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-[#4a4a4a]">
-              {[
-                { label: "Home", href: "#hero" },
-                { label: "About", href: "#about" },
-                { label: "Amenities", href: "#amenities" },
-                { label: "Gallery", href: "#gallery" },
-                { label: "Floor Plan", href: "#floor-plan" },
-                { label: "Location", href: "#location" },
-              ].map((item) => (
+              {SECTION_LINKS.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
