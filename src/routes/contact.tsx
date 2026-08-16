@@ -22,9 +22,9 @@ function ContactPage() {
 {/* Main Content Canvas */}
 <main className="w-full flex flex-col items-center">
 {/* Enquiry Section */}
-<section className="w-full max-w-4xl mx-auto px-6 md:px-container-padding py-section-gap flex flex-col items-center text-center"><div className="w-full max-w-[670px] mx-auto flex flex-col items-center">
+<section className="w-full max-w-4xl mx-auto px-6 md:px-container-padding py-16 md:py-section-gap flex flex-col items-center text-center"><div className="w-full max-w-[670px] mx-auto flex flex-col items-center">
   <p className="font-label-caps text-xs uppercase tracking-widest text-on-surface-variant mb-4">Your ideal space is just a step away</p>
-  <h1 className="font-headline-xl text-[48px] leading-tight text-primary mb-6 tracking-[0.02em] font-normal">LET'S GET STARTED!</h1>
+  <h1 className="font-headline-xl text-[32px] sm:text-[40px] md:text-[48px] leading-tight text-primary mb-6 tracking-[0.02em] font-normal">LET'S GET STARTED!</h1>
   <div className="flex items-center gap-4 mb-8 w-full max-w-[200px] justify-center">
     <div className="h-px bg-outline-variant/50 flex-1"></div>
     <div className="h-1 w-8 bg-[#AB8C47]"></div>
@@ -38,8 +38,8 @@ function ContactPage() {
       <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Your Email *" required={true} type="email" />
       <input className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors placeholder-on-surface-variant font-body-md rounded-none" placeholder="Phone *" required={true} type="tel" />
       <div className="relative">
-        <select className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors text-on-surface-variant font-body-md appearance-none cursor-pointer rounded-none">
-          <option disabled={true} selected={true} value="">Select Your Project</option>
+        <select defaultValue="" className="w-full h-[48px] border border-outline-variant/30 bg-white px-4 focus:outline-none focus:border-secondary transition-colors text-on-surface-variant font-body-md appearance-none cursor-pointer rounded-none">
+          <option disabled={true} value="">Select Your Project</option>
           <option value="project-1">Sun Glory</option>
           <option value="project-2">Sun Platina</option>
           <option value="project-3">Sun Emerald</option>

@@ -7,9 +7,9 @@ const STATUSES = ["ONGOING", "UPCOMING", "COMPLETED"] as const;
 export const Route = createFileRoute("/projects/na-plots")({
   head: () => ({
     meta: [
-      { title: "NA Plots — Rishi Builders & Developers" },
+      { title: "Land Projects — Rishi Builders & Developers" },
       { name: "description", content: "Sanctioned NA plots by Rishi Builders & Developers with clear titles and ready infrastructure." },
-      { property: "og:title", content: "NA Plots — Rishi Builders & Developers" },
+      { property: "og:title", content: "Land Projects — Rishi Builders & Developers" },
       { property: "og:description", content: "Sanctioned NA plots by Rishi Builders & Developers with clear titles and ready infrastructure." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -28,7 +28,7 @@ function NaPlotsPage() {
 <main className="flex-grow pt-[100px] md:pt-[120px]">
 {/* Page Header & Filters */}
 <section className="px-gutter md:px-6 md:px-container-padding py-margin-lg text-center max-w-5xl mx-auto">
-<h1 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-primary mb-6">NA Projects</h1>
+<h1 className="font-headline-xl text-headline-xl md:font-display-lg md:text-display-lg text-primary mb-6">Land Projects</h1>
 <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
                 Discover our portfolio of meticulously planned non-agricultural plots, designed for those who appreciate space, security, and long-term value.
             </p>
