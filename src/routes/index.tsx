@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export const Route = createFileRoute("/")({
   head: () => ({
