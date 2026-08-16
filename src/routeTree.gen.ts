@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsAgriculturalLandRouteImport } from './routes/projects.agricultural-land'
 import { Route as ProjectsCommercialRouteImport } from './routes/projects.commercial'
+import { Route as ProjectsLandRouteImport } from './routes/projects.land'
 import { Route as ProjectsNaPlotsRouteImport } from './routes/projects.na-plots'
 import { Route as ProjectsResidentialRouteImport } from './routes/projects.residential'
 import { Route as ProjectsSunGloryRouteImport } from './routes/projects.sun-glory'
@@ -44,6 +45,11 @@ const ProjectsCommercialRoute = ProjectsCommercialRouteImport.update({
   path: '/projects/commercial',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsLandRoute = ProjectsLandRouteImport.update({
+  id: '/projects/land',
+  path: '/projects/land',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsNaPlotsRoute = ProjectsNaPlotsRouteImport.update({
   id: '/projects/na-plots',
   path: '/projects/na-plots',
@@ -66,6 +72,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/projects/agricultural-land': typeof ProjectsAgriculturalLandRoute
   '/projects/commercial': typeof ProjectsCommercialRoute
+  '/projects/land': typeof ProjectsLandRoute
   '/projects/na-plots': typeof ProjectsNaPlotsRoute
   '/projects/residential': typeof ProjectsResidentialRoute
   '/projects/sun-glory': typeof ProjectsSunGloryRoute
@@ -76,6 +83,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects/agricultural-land': typeof ProjectsAgriculturalLandRoute
   '/projects/commercial': typeof ProjectsCommercialRoute
+  '/projects/land': typeof ProjectsLandRoute
   '/projects/na-plots': typeof ProjectsNaPlotsRoute
   '/projects/residential': typeof ProjectsResidentialRoute
   '/projects/sun-glory': typeof ProjectsSunGloryRoute
@@ -87,6 +95,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects/agricultural-land': typeof ProjectsAgriculturalLandRoute
   '/projects/commercial': typeof ProjectsCommercialRoute
+  '/projects/land': typeof ProjectsLandRoute
   '/projects/na-plots': typeof ProjectsNaPlotsRoute
   '/projects/residential': typeof ProjectsResidentialRoute
   '/projects/sun-glory': typeof ProjectsSunGloryRoute
@@ -99,6 +108,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects/agricultural-land'
     | '/projects/commercial'
+    | '/projects/land'
     | '/projects/na-plots'
     | '/projects/residential'
     | '/projects/sun-glory'
@@ -109,6 +119,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects/agricultural-land'
     | '/projects/commercial'
+    | '/projects/land'
     | '/projects/na-plots'
     | '/projects/residential'
     | '/projects/sun-glory'
@@ -119,6 +130,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/projects/agricultural-land'
     | '/projects/commercial'
+    | '/projects/land'
     | '/projects/na-plots'
     | '/projects/residential'
     | '/projects/sun-glory'
@@ -130,6 +142,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProjectsAgriculturalLandRoute: typeof ProjectsAgriculturalLandRoute
   ProjectsCommercialRoute: typeof ProjectsCommercialRoute
+  ProjectsLandRoute: typeof ProjectsLandRoute
   ProjectsNaPlotsRoute: typeof ProjectsNaPlotsRoute
   ProjectsResidentialRoute: typeof ProjectsResidentialRoute
   ProjectsSunGloryRoute: typeof ProjectsSunGloryRoute
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsCommercialRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/land': {
+      id: '/projects/land'
+      path: '/projects/land'
+      fullPath: '/projects/land'
+      preLoaderRoute: typeof ProjectsLandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects/na-plots': {
       id: '/projects/na-plots'
       path: '/projects/na-plots'
@@ -202,6 +222,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProjectsAgriculturalLandRoute: ProjectsAgriculturalLandRoute,
   ProjectsCommercialRoute: ProjectsCommercialRoute,
+  ProjectsLandRoute: ProjectsLandRoute,
   ProjectsNaPlotsRoute: ProjectsNaPlotsRoute,
   ProjectsResidentialRoute: ProjectsResidentialRoute,
   ProjectsSunGloryRoute: ProjectsSunGloryRoute,
