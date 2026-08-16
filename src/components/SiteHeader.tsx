@@ -1,10 +1,13 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import rishiLogo from "../assets/rishi-logo.png.asset.json";
 
 const navLinkClass = "transition-colors";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const light = pathname.startsWith("/projects/sun-glory");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -14,42 +17,47 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <nav className="bg-[#4a4a4a] full-width top-0 sticky z-50 transition-all duration-300">
+    <nav
+      className={`full-width top-0 sticky z-50 transition-all duration-300 ${
+        light
+          ? "bg-white/95 backdrop-blur-sm border-b border-black/10"
+          : "bg-[#4a4a4a]"
+      }`}
+    >
       <div
         className={`flex justify-between items-center w-full px-6 md:px-container-padding max-w-full mx-auto transition-all duration-300 ${
           scrolled ? "py-2" : "py-4"
         }`}
       >
         <Link to="/" className="flex items-center">
-          <div className="font-headline-lg text-headline-lg font-bold text-white leading-tight">
-            <span className="block text-2xl tracking-tighter">RISHI</span>
-            <span className="block text-sm tracking-[0.3em] font-light -mt-1">BUILDERS</span>
-            <div className="h-px bg-white/30 w-full mt-1"></div>
-            <span className="block text-[10px] tracking-[0.1em] font-light">
-              COME HOME TO QUALITY
-            </span>
-          </div>
+          <img
+            src={rishiLogo.url}
+            alt="Rishi Builders & Developers logo"
+            className={`w-auto transition-all duration-300 bg-white rounded p-1 ${
+              scrolled ? "h-12" : "h-16"
+            }`}
+          />
         </Link>
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-white">
+          <div className={`hidden md:flex items-center gap-8 font-nav-link text-nav-link ${light ? "text-[#4a4a4a]" : "text-white"}`}>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/" className={navLinkClass}>
                 Home
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/about" className={navLinkClass}>
                 About
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <span className="flex items-center gap-1 cursor-pointer">Projects</span>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <div className="absolute top-full left-0 hidden group-hover:block min-w-[260px] pt-4 z-50">
                 <div className="bg-white rounded-b-xl overflow-hidden shadow-xl">
                 <div className="flex flex-col">
@@ -98,11 +106,11 @@ export function SiteHeader() {
 
             </div>
             <div className="relative group py-2">
-              <div className="absolute -top-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -top-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
               <Link to="/contact" className={navLinkClass}>
                 Contact
               </Link>
-              <div className="absolute -bottom-1 left-0 right-0 h-px bg-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className={`absolute -bottom-1 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity ${light ? "bg-[#b08d57]" : "bg-white"}`}></div>
             </div>
           </div>
           <Link

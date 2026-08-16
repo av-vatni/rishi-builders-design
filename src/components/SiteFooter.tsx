@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import rishiLogo from "../assets/rishi-logo.png.asset.json";
 
 export function SiteFooter() {
 
@@ -6,10 +7,7 @@ export function SiteFooter() {
 <footer className="bg-tertiary dark:bg-tertiary-container full-width border-t border-on-tertiary-fixed-variant">
 <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-6 md:px-container-padding py-section-gap w-full max-w-7xl mx-auto">
 <div className="flex flex-col gap-6">
-<div className="font-headline-xl text-headline-xl text-on-tertiary">
-                    Rishi Builders
-                </div>
-<p className="font-body-md text-body-md text-on-tertiary/70">COME HOME TO QUALITY</p>
+<img src={rishiLogo.url} alt="Rishi Builders & Developers logo" className="h-24 w-auto bg-white rounded p-2 self-start" />
 <div className="flex gap-4">
 <a className="w-10 h-10 bg-on-tertiary text-tertiary flex items-center justify-center rounded hover:bg-secondary transition-colors" href="#"><span className="material-symbols-outlined" data-icon="share">share</span></a>
 <a className="w-10 h-10 bg-on-tertiary text-tertiary flex items-center justify-center rounded hover:bg-secondary transition-colors" href="#"><span className="material-symbols-outlined" data-icon="photo_camera">photo_camera</span></a>
