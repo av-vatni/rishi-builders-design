@@ -24,7 +24,7 @@ export function SiteFooter() {
 <Link className="text-on-tertiary/70 hover:text-secondary-fixed transition-colors flex items-center gap-2" to="/projects/residential"><span className="material-symbols-outlined text-sm">chevron_right</span> Projects</Link>
 <ul className="mt-3 ml-6 flex flex-col gap-2 text-sm">
 <li><span className="text-secondary-fixed/70 text-xs tracking-widest font-bold uppercase">Land Projects</span></li>
-<li><Link className="text-on-tertiary/70 hover:text-secondary-fixed transition-colors" to="/projects/na-plots">NA Plots</Link></li>
+<li><Link className="text-on-tertiary/70 hover:text-secondary-fixed transition-colors" to="/projects/na-plots">Land</Link></li>
 <li><Link className="text-on-tertiary/70 hover:text-secondary-fixed transition-colors" to="/projects/agricultural-land">Agricultural Land</Link></li>
 <li className="mt-2"><span className="text-secondary-fixed/70 text-xs tracking-widest font-bold uppercase">Construction Projects</span></li>
 <li><Link className="text-on-tertiary/70 hover:text-secondary-fixed transition-colors" to="/projects/residential">Residential Projects</Link></li>

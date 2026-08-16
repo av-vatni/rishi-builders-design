@@ -148,58 +148,28 @@ function HomePage() {
 </div>
 <p className="font-body-md text-body-md text-on-surface-variant max-w-3xl mx-auto">At Rishi Builders, we redefine modern living with thoughtfully designed residential and commercial spaces. Our featured projects showcase a perfect blend of luxury, innovation, and sustainability.</p>
 </div>
-<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
-<div className="relative group cursor-pointer pt-4 pb-20">
-<div className="w-full h-[400px] rounded-2xl overflow-hidden relative z-0">
-<img alt="Sun Garnet" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRSWE4H8JDKcFgOjzFClloKapPaYDubyup1JqKPT32tlnNnfODfij4oUuYy13pgXdFViNWpM7tkXRguYOxKiOEF_4a9HMTK3581fH2NUYuYmJla7-LVo8CIaiK2Fr6bfoPXJvfdwxP2zkY0WjE2o24E4sqmq5VTfUEfyd941W3Sd5az0ST4Lsz5_wBpu5dXC9KGDKleNr3jWMokW6Y6TF2VTh55NjqL3kLqFO6FEtJndwTFsm2mp8sfUwXzNJm6tRpRMErlsGjKUHQ7E" />
-</div>
-<div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] group-hover:h-[220px] shadow-lg group-hover:h-[240px]">
-<div className="p-6 flex flex-col items-center justify-end w-full h-full">
-<h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Garnet<br /><span className="text-lg">Keshav Nagar</span></h3>
-<div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
-<p className="text-white/90 text-sm mb-4">Premium residential building featuring a sophisticated facade with a mix of glass and solid panels.</p>
-<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
-</div>
-</div>
-</div>
-<div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
-</div>
-</div>
-<div className="relative group cursor-pointer pt-4 pb-20">
-<div className="w-full h-[400px] rounded-2xl overflow-hidden relative z-0">
-<img alt="Sun Regalia" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH0fMDAitEM2IKwsF2DrTL7X5teMZAbmoJlvke_oJ9Jgw77PzpvlwfrkZL_5rslrdxNWbEtG6CfF9n3Vi56XQHZ-_UBxWoo3P3f522lT9DtBij5j_yQWYVjrvCryOFxV2uMq1AxiFXWj8dUZ8pXDPixoFAuGTYdo4X5qiC-jAoQYX6R2c5xxD_Wg3MxKgkH0gQ8tIKoLnbC73cAJREmNPkyFbUCOG-89AC5z43WyG7Xvo9CIZ-gyOGRaSetBQ1B0IWIicmwz-4jqzcGR8" />
-</div>
-<div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] group-hover:h-[220px] shadow-lg group-hover:h-[240px]">
-<div className="p-6 flex flex-col items-center justify-end w-full h-full">
-<h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Regalia<br /><span className="text-lg">Sinhagad Road</span></h3>
-<div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
-<p className="text-white/90 text-sm mb-4">A sprawling luxury complex nestled in a quiet urban setting, highlighting premium residential living.</p>
-<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
-</div>
-</div>
-</div>
-<div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
-</div>
-</div>
-<div className="relative group cursor-pointer pt-4 pb-20">
-<div className="w-full h-[400px] rounded-2xl overflow-hidden relative z-0">
-<img alt="Sun Platina" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMyis14d6jQtZW8hxy9ycbU164bAxZfmugBuaSXbaH8dU5ArAV8Q7h3v0t_VMilex9lftTuSQllH5CZ60He3wEs1ZjQPG_3NBB3t3QswktTHPFSdpT0tMdbq10wvRE2mUtP2_8DCsSLjWq9IMjLCpeRBu4lXBeqvr81Y8Gn6RKLyO-UxLmDD7zHP1sl6pLz6AzCsZ4cl-vwyPsv_CL9SBUSKJ6yAOLbilO1ugWxgdmR51iUZjkLVtnvPlKJOVULRR23YtvRoYBoZFeDn8" />
-</div>
-<div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] group-hover:h-[220px] shadow-lg group-hover:h-[240px]">
-<div className="p-6 flex flex-col items-center justify-end w-full h-full">
-<h3 className="font-headline-lg text-2xl text-white mb-2 leading-tight">Sun Platina<br /><span className="text-lg">Kharadi</span></h3>
-<div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out h-0 group-hover:h-auto group-hover:mt-2 overflow-hidden flex flex-col items-center w-full">
-<p className="text-white/90 text-sm mb-4">A sprawling luxury complex reflecting growth and investment potential in Pune's top hotspot.</p>
-<Link to="/projects/sun-glory" className="inline-block bg-[#AB8C47] text-white font-label-caps text-xs px-6 py-3 uppercase tracking-widest hover:bg-[#8A7139] transition-colors">EXPLORE MORE</Link>
-</div>
-</div>
-</div>
-<div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 opacity-100 group-hover:opacity-0 transition-opacity duration-200 mt-4">
-<Link to="/projects/sun-glory" className="inline-block bg-[#F0F5FB] text-[#AB8C47] font-label-caps text-xs px-8 py-3 uppercase tracking-widest font-bold border-none">EXPLORE MORE</Link>
-</div>
-</div>
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch">
+<ProjectCard
+  image="https://lh3.googleusercontent.com/aida-public/AB6AXuDcRSWE4H8JDKcFgOjzFClloKapPaYDubyup1JqKPT32tlnNnfODfij4oUuYy13pgXdFViNWpM7tkXRguYOxKiOEF_4a9HMTK3581fH2NUYuYmJla7-LVo8CIaiK2Fr6bfoPXJvfdwxP2zkY0WjE2o24E4sqmq5VTfUEfyd941W3Sd5az0ST4Lsz5_wBpu5dXC9KGDKleNr3jWMokW6Y6TF2VTh55NjqL3kLqFO6FEtJndwTFsm2mp8sfUwXzNJm6tRpRMErlsGjKUHQ7E"
+  title="Sun Garnet"
+  subtitle="Keshav Nagar"
+  description="Premium residential building featuring a sophisticated facade with a mix of glass and solid panels."
+  to="/projects/sun-glory"
+/>
+<ProjectCard
+  image="https://lh3.googleusercontent.com/aida-public/AB6AXuAH0fMDAitEM2IKwsF2DrTL7X5teMZAbmoJlvke_oJ9Jgw77PzpvlwfrkZL_5rslrdxNWbEtG6CfF9n3Vi56XQHZ-_UBxWoo3P3f522lT9DtBij5j_yQWYVjrvCryOFxV2uMq1AxiFXWj8dUZ8pXDPixoFAuGTYdo4X5qiC-jAoQYX6R2c5xxD_Wg3MxKgkH0gQ8tIKoLnbC73cAJREmNPkyFbUCOG-89AC5z43WyG7Xvo9CIZ-gyOGRaSetBQ1B0IWIicmwz-4jqzcGR8"
+  title="Sun Regalia"
+  subtitle="Sinhagad Road"
+  description="A sprawling luxury complex nestled in a quiet urban setting, highlighting premium residential living."
+  to="/projects/sun-glory"
+/>
+<ProjectCard
+  image="https://lh3.googleusercontent.com/aida-public/AB6AXuCMyis14d6jQtZW8hxy9ycbU164bAxZfmugBuaSXbaH8dU5ArAV8Q7h3v0t_VMilex9lftTuSQllH5CZ60He3wEs1ZjQPG_3NBB3t3QswktTHPFSdpT0tMdbq10wvRE2mUtP2_8DCsSLjWq9IMjLCpeRBu4lXBeqvr81Y8Gn6RKLyO-UxLmDD7zHP1sl6pLz6AzCsZ4cl-vwyPsv_CL9SBUSKJ6yAOLbilO1ugWxgdmR51iUZjkLVtnvPlKJOVULRR23YtvRoYBoZFeDn8"
+  title="Sun Platina"
+  subtitle="Kharadi"
+  description="A sprawling luxury complex reflecting growth and investment potential in Pune's top hotspot."
+  to="/projects/sun-glory"
+/>
 </div>
 </section>
 {/* Insights */}
