@@ -101,7 +101,7 @@ function SunGloryPage() {
 <section className="bg-background" id="about">
 {/* First Editorial Section */}
 <div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center mt-section-gap">
-<div className="h-[600px] overflow-hidden slide-in-left visible">
+<div className="h-[320px] md:h-[600px] overflow-hidden slide-in-left visible">
 <img alt="Luxury Project Exterior" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvnedKxHhXdr_UrnYhLW6qQIk-nwjMwPNam-o5ScHCz7Wasug3VWBdPbSJThVma8UUphjyGGQ7RhT2OBDcb8L5Yvc4UORj30MlWm7BabpTV8C6FOtvwat3o9_T_Hx8rLDlUh3tJX70H093FBRJBrMcgQnmqJAIQQ2kDq8szHWgqBzMtmHowbPfdHPGaN9dw38BZg6WkzMcBaBOcccTbhCpV0qUeg_C1n7Hs8oi3uvx1S1uH-jtvnCW8jhfEeWvaYv2rMI" />
 </div>
 <div className="p-12 lg:p-24 flex flex-col justify-center slide-in-right visible">
@@ -113,7 +113,7 @@ function SunGloryPage() {
 </div>
 </div>
 {/* Second Editorial Section */}
-<div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center bg-surface-container-low"><div className="h-[600px] overflow-hidden lg:order-2">
+<div className="max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center bg-surface-container-low"><div className="h-[320px] md:h-[600px] overflow-hidden lg:order-2">
 <img alt="Architectural Detail" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbnU9LOU2EF4KbwEziSrLn1xjtteGn0BY6vOIH5wyowtxu8F019Fxxm-oZiFaqB2Wc-L6q6BaREb9EWp5omVjZnZw06APTfoIht19OklxNOdE19042CcP1XdV01ObrRcBhAsiEHQWFgnCy5l2ypVSp2cDn5Qf3C_Z-FvH1bvUIumPqmnnpzuos99WXcW7BluD9fKWyPPQazZSmSrse33Ie3LplwaBn60UTzh9lHQKXSmZ4l5e8kEo6b1SKTHHmWMnHatTTdb0RSlEQRIk" />
 </div><div className="p-12 lg:p-24 flex flex-col justify-center lg:order-1">
 <h2 className="font-headline-xl text-headline-xl text-primary mb-8">Architectural Excellence</h2>
