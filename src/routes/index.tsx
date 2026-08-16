@@ -113,17 +113,17 @@ function HomePage() {
 </div>
 </header>
 {/* Overlapping Block */}
-<section className="py-section-gap px-6 md:px-container-padding pb-20 pb-section-gap">
+<section className="py-16 md:py-section-gap px-6 md:px-container-padding">
 <div className="max-w-7xl mx-auto relative">
 <div className="relative">
 {/* Large Architectural Image on the Left */}
-<div className="w-full md:w-[60%] h-[600px] relative z-0">
+<div className="w-full md:w-[60%] h-[280px] sm:h-[400px] md:h-[600px] relative z-0">
 <img alt="Sun Glory Lokmanya Nagar" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_OxvGXTsXeLEmJ_VI5B8cZ7r3iSq79zDn0DGJOEbJrw2aNi9iQZsjjMDUi-XoKp5FCi4zLSNM3RD2Efc_ZrTEm4Pa8y8aNxuLKLMGBXYnIkZ5GbKMlxRK2q1Ozx0YMexvqoScywCva9No6HrkQ1qCVJDFX9cZe54koVCU2oSjgY8m_SZLqPjf9XH8dNvqPtFAcpUM1yYQvN0GUDGMezsfsJg2QLveRds9Vsu94MRlJiiDPQCA3YzV3IaB9ZmIX4Gfp0b2014BIP-cVZU" />
 </div>
 {/* Overlapping Information Panel on the Right */}
-<div className="absolute top-1/2 -translate-y-1/2 right-0 w-full md:w-[48%] bg-white p-12 shadow-xl z-10">
+<div className="relative md:absolute md:top-1/2 md:-translate-y-1/2 md:right-0 w-full md:w-[48%] bg-white p-6 sm:p-10 md:p-12 shadow-xl z-10">
 <div className="mb-6">
-<h2 className="font-headline-xl text-headline-xl text-primary uppercase tracking-wide mb-4">SUN GLORY LOKMANYA NAGAR</h2>
+<h2 className="font-headline-xl text-2xl sm:text-3xl md:text-headline-xl text-primary uppercase tracking-wide mb-4 break-words">SUN GLORY LOKMANYA NAGAR</h2>
 <div className="flex items-center gap-2">
 <div className="w-8 h-px bg-primary"></div>
 <div className="w-24 h-px bg-[#AB8C47]"></div>
@@ -132,7 +132,7 @@ function HomePage() {
 <p className="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
     Experience the pinnacle of city living with premium 3 BHK residences at Sun Glory, <strong>located in Lokmanya Nagar, Sadashiv Peth</strong>. Enjoy a rare blend of low-density exclusivity and unmatched, seamless connectivity to Laxmi Road, Swargate, and central business zones.
   </p>
-<button className="bg-[#AB8C47] text-white font-label-caps text-sm px-12 py-4 hover:bg-[#8A7139] transition-colors uppercase tracking-widest">
+<button className="bg-[#AB8C47] text-white font-label-caps text-xs sm:text-sm px-8 sm:px-12 py-3 sm:py-4 hover:bg-[#8A7139] transition-colors uppercase tracking-widest">
     KNOW MORE
   </button>
 </div>

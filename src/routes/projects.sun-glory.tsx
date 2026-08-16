@@ -150,7 +150,7 @@ function SunGloryPage() {
 {AMENITIES.map((a, i) => (
   <div key={a.title} className={`absolute inset-0 p-12 lg:p-24 flex flex-col justify-center transition-all duration-700 ease-in-out ${amenIdx === i ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}>
     <p className="font-label-caps text-[14px] font-semibold tracking-[0.15em] mb-4" style={{color: "#AB8C47"}}>{a.kicker}</p>
-    <h3 className="font-headline-xl text-4xl lg:text-5xl text-primary mb-6 leading-tight">{a.title}</h3>
+    <h3 className="font-headline-xl text-3xl sm:text-4xl lg:text-5xl text-primary mb-6 leading-tight">{a.title}</h3>
     <p className="font-body-lg text-lg text-on-surface-variant leading-relaxed">{a.body}</p>
   </div>
 ))}
@@ -163,13 +163,13 @@ function SunGloryPage() {
 </div>
 </div>
 </section>
-<section className="py-section-gap bg-surface overflow-hidden" id="gallery">
+<section className="py-16 md:py-section-gap bg-surface overflow-hidden" id="gallery">
 <div className="text-center mb-12">
 <p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Visuals</p>
 <h2 className="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-widest">GALLERY</h2>
 <div className="w-24 h-[1px] bg-secondary mx-auto"></div>
 </div>
-<div className="relative max-w-[1920px] mx-auto px-4 md:px-0">
+<div className="relative max-w-[1920px] mx-auto px-4 md:px-0 overflow-hidden">
 <div className="flex items-center justify-center gap-4 md:gap-8 overflow-hidden h-[400px] md:h-[600px] relative gallery-carousel">
 {GALLERY.map((g, i) => {
   const rel = (i - galIdx + GALLERY.length) % GALLERY.length;
@@ -213,7 +213,7 @@ referrerPolicy="strict-origin-when-cross-origin"
 </div>
 </div>
 </section>
-<section className="py-section-gap bg-background overflow-hidden" id="floor-plan">
+<section className="py-16 md:py-section-gap bg-background overflow-hidden" id="floor-plan">
 <div className="text-center mb-12">
 <p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">Architectural Layout</p>
 <h2 className="font-headline-xl text-headline-xl text-primary mb-4 uppercase tracking-widest">FLOOR PLAN</h2>
@@ -264,7 +264,7 @@ REQUEST BROCHURE
 </div>
 </div>
 </div>
-</section><section className="py-section-gap bg-background overflow-hidden" id="location"><div className="max-w-7xl mx-auto px-6 md:px-container-padding"><div className="text-center mb-16"><p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">DISCOVER THE NEIGHBORHOOD</p><h2 className="font-headline-xl text-headline-xl text-primary mb-4">Strategic Location</h2><div className="w-24 h-[1px] bg-secondary mx-auto"></div></div><div className="mb-16 rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20"><img alt="Strategic Location Map" className="w-full h-[280px] md:h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsbpawNQb92x8dlWbalPtyTyteh6ksFWQTLFaQY96S9nUmqo8D3hNiRs9CrArvp4bu4OPwQQSDPEH7GdNmyiL1duLXOgtUEA8iA9YjaJ5Nrhb4geG5YcQsWYIiUUBFm98wrdbcWVocw6onoLbxQes-FLTXjJDcyBNY-SDMuSoB37300AZOk_jnGcMMFGQUpb39R6c5KjhJy7LMOZ_YwvnO4991pZ3JRFnKJ98KPjwY8nm3VdgcIjJU3_efu" /></div></div></section>
+</section><section className="py-16 md:py-section-gap bg-background overflow-hidden" id="location"><div className="max-w-7xl mx-auto px-6 md:px-container-padding"><div className="text-center mb-16"><p className="font-label-caps text-label-caps text-secondary mb-2 uppercase tracking-widest">DISCOVER THE NEIGHBORHOOD</p><h2 className="font-headline-xl text-headline-xl text-primary mb-4">Strategic Location</h2><div className="w-24 h-[1px] bg-secondary mx-auto"></div></div><div className="mb-16 rounded-xl overflow-hidden shadow-2xl border border-outline-variant/20"><img alt="Strategic Location Map" className="w-full h-[280px] md:h-[500px] object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsbpawNQb92x8dlWbalPtyTyteh6ksFWQTLFaQY96S9nUmqo8D3hNiRs9CrArvp4bu4OPwQQSDPEH7GdNmyiL1duLXOgtUEA8iA9YjaJ5Nrhb4geG5YcQsWYIiUUBFm98wrdbcWVocw6onoLbxQes-FLTXjJDcyBNY-SDMuSoB37300AZOk_jnGcMMFGQUpb39R6c5KjhJy7LMOZ_YwvnO4991pZ3JRFnKJ98KPjwY8nm3VdgcIjJU3_efu" /></div></div></section>
 {/* Location Section */}
 </main>
 {/* Footer */}

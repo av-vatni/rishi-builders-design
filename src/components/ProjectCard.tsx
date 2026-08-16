@@ -29,13 +29,13 @@ export function ProjectCard({ image, title, subtitle, description, to }: Project
   const expanded = isMobile && inView;
 
   return (
-    <div ref={ref} className="relative group cursor-pointer pt-4 pb-20">
+    <div ref={ref} className="relative group cursor-pointer pt-4 pb-16 sm:pb-20">
       <div className="w-full h-[280px] sm:h-[340px] lg:h-[400px] rounded-2xl overflow-hidden relative z-0">
         <img alt={title} className="w-full h-full object-cover" src={image} loading="lazy" />
       </div>
       <div
         style={expanded ? { height: 240 } : undefined}
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] md:group-hover:h-[240px] shadow-lg"
+        className="absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 w-[85%] bg-[#5B5B5B] flex flex-col items-center text-center z-10 transition-all duration-[400ms] ease-out justify-end overflow-hidden h-[100px] md:group-hover:h-[240px] shadow-lg"
       >
         <div className="p-4 sm:p-6 flex flex-col items-center justify-end w-full h-full">
           <h3 className="font-headline-lg text-xl sm:text-2xl text-white mb-2 leading-tight">
