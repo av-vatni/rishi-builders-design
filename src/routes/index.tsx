@@ -29,7 +29,7 @@ function HomePage() {
 
 
 {/* Hero Carousel */}
-<header className="relative w-full h-screen bg-black" id="hero-carousel">
+<header className="relative w-full h-[100svh] min-h-[520px] bg-black" id="hero-carousel">
 {/* Slides Container */}
 <div className="relative w-full h-full" id="carousel-slides">
 {/* Slide 1 */}

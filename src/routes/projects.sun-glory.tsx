@@ -78,7 +78,7 @@ function SunGloryPage() {
 
 <main>
 {/* Hero Section */}
-<section className="relative w-full h-screen min-h-[600px] flex items-center justify-start overflow-hidden hero-carousel-container" id="hero">
+<section className="relative w-full h-[100svh] min-h-[520px] md:min-h-[600px] flex items-center justify-start overflow-hidden hero-carousel-container" id="hero">
 <div className="absolute inset-0 z-0">
 <div className="relative w-full h-full">
 {HERO_IMAGES.map((src, i) => (
