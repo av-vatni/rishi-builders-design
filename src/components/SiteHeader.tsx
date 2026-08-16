@@ -112,7 +112,7 @@ export function SiteHeader() {
                             to="/projects/na-plots"
                             className="text-on-surface-variant hover:text-secondary transition-colors text-sm"
                           >
-                            NA Plots
+                            Land
                           </Link>
                           <Link
                             to="/projects/agricultural-land"
@@ -222,7 +222,7 @@ export function SiteHeader() {
                     onClick={() => setMenuOpen(false)}
                     className="pl-4 text-sm"
                   >
-                    NA Plots
+                    Land
                   </Link>
                   <Link
                     to="/projects/agricultural-land"
