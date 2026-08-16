@@ -198,7 +198,7 @@ function SunGloryPage() {
 </button>
 </div>
 </section>
-<section className="bg-surface overflow-hidden">
+<section className="bg-surface overflow-hidden py-8">
 <div className="max-w-7xl mx-auto px-6 md:px-container-padding">
 <div className="relative w-full overflow-hidden rounded-xl shadow-2xl border border-outline-variant/20" style={{aspectRatio: "16 / 9"}}>
 <iframe
