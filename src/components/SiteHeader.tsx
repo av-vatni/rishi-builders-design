@@ -1,10 +1,13 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import rishiLogo from "../assets/rishi-logo.png.asset.json";
 
 const navLinkClass = "transition-colors";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const transparent = pathname.startsWith("/projects/sun-glory") && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -14,21 +17,26 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <nav className="bg-[#4a4a4a] full-width top-0 sticky z-50 transition-all duration-300">
+    <nav
+      className={`full-width top-0 sticky z-50 transition-all duration-300 ${
+        transparent
+          ? "bg-transparent absolute backdrop-blur-sm border-b border-white/20"
+          : "bg-[#4a4a4a]"
+      }`}
+    >
       <div
         className={`flex justify-between items-center w-full px-6 md:px-container-padding max-w-full mx-auto transition-all duration-300 ${
           scrolled ? "py-2" : "py-4"
         }`}
       >
         <Link to="/" className="flex items-center">
-          <div className="font-headline-lg text-headline-lg font-bold text-white leading-tight">
-            <span className="block text-2xl tracking-tighter">RISHI</span>
-            <span className="block text-sm tracking-[0.3em] font-light -mt-1">BUILDERS</span>
-            <div className="h-px bg-white/30 w-full mt-1"></div>
-            <span className="block text-[10px] tracking-[0.1em] font-light">
-              COME HOME TO QUALITY
-            </span>
-          </div>
+          <img
+            src={rishiLogo.url}
+            alt="Rishi Builders & Developers logo"
+            className={`w-auto transition-all duration-300 bg-white rounded p-1 ${
+              scrolled ? "h-12" : "h-16"
+            }`}
+          />
         </Link>
         <div className="flex items-center gap-8">
           <div className="hidden md:flex items-center gap-8 font-nav-link text-nav-link text-white">
